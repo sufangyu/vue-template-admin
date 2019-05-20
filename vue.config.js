@@ -44,7 +44,7 @@ module.exports = {
   lintOnSave: 'error',
   publicPath: IS_PROD ? '/' : '/',
   css: {
-    extract: true,
+    extract: !!IS_PROD,
   },
   configureWebpack: (config) => {
     if (IS_PROD) {
