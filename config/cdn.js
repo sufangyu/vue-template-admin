@@ -4,6 +4,7 @@
 module.exports = {
   css: [
     '//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css',
+    '//unpkg.com/element-ui/lib/theme-chalk/index.css',
   ],
   js: [
     '//cdn.bootcss.com/vue/2.5.21/vue.min.js',
@@ -12,5 +13,6 @@ module.exports = {
     '//cdn.bootcss.com/axios/0.18.0/axios.min.js',
     '//cdn.bootcss.com/js-cookie/2.2.0/js.cookie.min.js',
     '//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js',
+    '//unpkg.com/element-ui/lib/index.js',
   ],
 };

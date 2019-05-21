@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <icon-svg name="qq" />
     <p v-has="{action: 'admin', actions: ['admin', 'edit']}">{{ date | fromNow }}</p>
+    <el-button>xxx</el-button>
   </div>
 </template>
 

@@ -8,4 +8,5 @@ module.exports = {
   axios: 'axios',
   'js-cookie': 'Cookies',
   nprogress: 'NProgress',
+  ELEMENT: 'element-ui',
 };

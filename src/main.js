@@ -1,4 +1,6 @@
 import Vue from 'vue';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 import App from './App.vue';
 import router from './router';
@@ -16,6 +18,8 @@ Object.keys(filters).forEach((key) => {
 Object.keys(directives).forEach((key) => {
   Vue.directive(key, directives[key]);
 });
+
+Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 
