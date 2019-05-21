@@ -5,7 +5,7 @@ export default [
     path: '/',
     name: 'Home',
     component: () => import(/* webpackChunkName: 'home' */ '@/views/home.vue'),
-  },    
+  },
   {
     path: '/about',
     name: 'About',
