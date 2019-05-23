@@ -96,3 +96,39 @@ a {
 img {
   max-width: 100%;
 }
+
+// float、align
+.align {
+  &-left {
+    text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+  &-center {
+    text-align: center;
+  }
+}
+.float {
+  &-left {
+    float: left;
+  }
+  &-right {
+    float: right;
+  }
+  &-none {
+    float: none;
+  }
+}
+
+// button
+.button-block {
+  width: 100%;
+}
+
+// form
+.form-item-normal {
+  .el-form-item__content {
+    line-height: 1;
+  }
+}
