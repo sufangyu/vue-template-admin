@@ -6,6 +6,12 @@ export default [
     hidden: true,
   },
   {
+    path: '/register',
+    name: 'Register',
+    component: () => import('@/views/account/register'),
+    hidden: true,
+  },
+  {
     path: '/404',
     name: 'NotFound',
     component: () => import('@/views/error-page/404'),
