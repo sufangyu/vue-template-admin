@@ -3,7 +3,7 @@
   <div class="page-account-content">
     <div class="content-top">
       <h1 class="content-header">Admin Template</h1>
-      <div class="content-desc">项目提供后台项目集成方案，以便开箱即用</div>
+      <div class="content-desc">旨在提供后台项目集成方案，方便开箱即用</div>
     </div>
     <div class="content-main">
       <el-form
@@ -109,10 +109,11 @@ export default {
           try {
             const data = { ...this.form };
             const res = await login(data);
-            if (res.success) {
-              console.log('登录成功');
-            } else {
+            if (!res.success) {
               this.$message.error(res.message || '登录失败，请重试');
+            } else {
+              const redirectUrl = this.$route.query.redirect ? decodeURIComponent(this.$route.query.redirect) : '/';
+              this.$router.replace(redirectUrl);
             }
           } catch (err) {
             console.log(err);

@@ -1,21 +1,32 @@
-const USERS = {
+const TOKENS = {
   admin: {
-    roles: ['admin'],
-    introduction: 'I am a super administrator',
-    name: '超级管理员',
-    password: '123456',
     token: 'admin-token',
-    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    password: '123456',
   },
   editor: {
-    roles: ['editor'],
-    introduction: 'I am an editor',
-    password: '123456',
-    name: '张三疯',
     token: 'editor-token',
-    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    password: '123456',
   },
 };
+
+// const USERS = {
+//   'admin-token': {
+//     roles: ['admin'],
+//     introduction: 'I am a super administrator',
+//     name: '超级管理员',
+//     password: '123456',
+//     token: 'admin-token',
+//     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+//   },
+//   'editor-token': {
+//     roles: ['editor'],
+//     introduction: 'I am an editor',
+//     password: '123456',
+//     name: '张三疯',
+//     token: 'editor-token',
+//     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+//   },
+// };
 
 
 export default [
@@ -25,7 +36,7 @@ export default [
     type: 'post',
     response: (config) => {
       const { username, password } = config.body;
-      const user = USERS[username];
+      const user = TOKENS[username];
       // mock error
       if (!user || (!!user && user.password !== password)) {
         return {
@@ -38,7 +49,7 @@ export default [
       return {
         success: true,
         message: 'success',
-        data: user,
+        data: user.token,
       };
     },
   },

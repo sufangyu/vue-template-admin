@@ -32,7 +32,7 @@
         <el-form-item label="">
           <el-row :gutter="10">
             <el-col :span="15">
-              <el-input v-model="form.code" placeholder="验证码"></el-input>
+              <el-input v-model="form.captch" placeholder="验证码"></el-input>
             </el-col>
             <el-col :span="9">
               <el-button class="button-block">获取验证码</el-button>
@@ -82,7 +82,7 @@ export default {
         repassword: '',
         areaCode: '86',
         mobile: '',
-        code: '',
+        captch: '',
       },
     };
   },
