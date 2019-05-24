@@ -74,7 +74,6 @@
 <script>
 import Flex from '@/components/flex';
 import { validateMin } from '@/utils/validate-rules';
-import { login } from '@/api/account';
 
 export default {
   name: 'Login',
@@ -105,18 +104,17 @@ export default {
       this.$refs.form.validate(async (valid) => {
         if (valid) {
           this.loading = true;
-
           try {
             const data = { ...this.form };
-            const res = await login(data);
+            const res = await this.$store.dispatch('loginByUsername', data);
             if (!res.success) {
               this.$message.error(res.message || '登录失败，请重试');
             } else {
               const redirectUrl = this.$route.query.redirect ? decodeURIComponent(this.$route.query.redirect) : '/';
               this.$router.replace(redirectUrl);
             }
-          } catch (err) {
-            console.log(err);
+          } catch (error) {
+            console.error(error);
           } finally {
             this.loading = false;
           }
