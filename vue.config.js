@@ -78,7 +78,7 @@ module.exports = {
     config.plugin('define')
       .tap((args) => {
         Object.assign(args[0]['process.env'], {
-          'x-custom': '"vue-template-mobile"',
+          'x-custom': '"vue-x-custom"',
         });
         return args;
       });
