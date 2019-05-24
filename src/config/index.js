@@ -4,7 +4,7 @@
  */
 
 // 获取 api 前置路径
-export const API_ORIGIN = (function fn() {
+export const API_BASE = (function fn() {
   if (process.env.NODE_ENV === 'development') {
     return '/api';
   }
