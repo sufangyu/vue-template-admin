@@ -18,6 +18,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'object-curly-newline': 'off', // 不强制花括号内换行
     'arrow-body-style': 'off', // 箭头函数不强制以用块体（用花括号表示）
+    'import/named': 'off', // 停用 import/named 校验
   },
   parserOptions: {
     parser: 'babel-eslint',
