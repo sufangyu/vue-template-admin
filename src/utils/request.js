@@ -17,7 +17,8 @@ const request = (defaults = {}) => {
       'Content-Type': defaults.contentType || 'application/json;charset=utf-8',
     },
     timeout: defaults.timeout || TIME_OUT,
-    cache: false, // 是否缓存页面
+    cache: false, // Whether to cache
+    withCredentials: true, // send cookies when cross-domain requests
   });
 
   // request interceptor
