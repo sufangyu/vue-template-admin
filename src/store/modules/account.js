@@ -21,7 +21,7 @@ const user = {
             resolve(res);
           } else {
             const { data } = res;
-            setToken(data);
+            setToken(data.token);
             commit('SET_TOKEN', data.token);
             resolve(res);
           }

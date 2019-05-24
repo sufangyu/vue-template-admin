@@ -49,7 +49,9 @@ export default [
       return {
         success: true,
         message: 'success',
-        data: user.token,
+        data: {
+          token: user.token,
+        },
       };
     },
   },
