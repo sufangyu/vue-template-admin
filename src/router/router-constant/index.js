@@ -1,4 +1,24 @@
+import Layout from '@/layout';
+
 export default [
+  {
+    path: '',
+    component: Layout,
+    redirect: '/dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        name: 'dashboard',
+        component: () => import('@/views/dashboard/index'),
+        meta: {
+          icon: 'home',
+          title: '控制台',
+          noCache: true,
+          auth: true,
+        },
+      },
+    ],
+  },
   {
     path: '/login',
     name: 'Login',

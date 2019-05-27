@@ -46,6 +46,7 @@ $fill-grey                          : #f7f7f7;          // 灰色背景
 
 // 透明度
 $opacity-disabled                   : 0.3;                // switch checkbox radio 等组件禁用的透明度
+$opacity-disabled-content           : 0.5;                // 内容禁用的透明度
 
 
 // 边框色
@@ -113,8 +114,12 @@ $easeOutFunction   : cubic-bezier(0.23, 1, 0.32, 1);
 $easeInOutFunction : cubic-bezier(0.445, 0.05, 0.55, 0.95);
 $fadeInOutFunction : cubic-bezier(0.55, 0, 0.55, 0.2);
 
+
 // 组件变量
 // ---
+// app
+$app-header-height       : 64px;
+
 // search-bar
 $search-bar-fill         : $fill-base;
 $search-bar-fill-dark    : $brand-primary;

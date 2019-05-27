@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+  <div class="page-dashboard">
+    <img alt="Vue logo" src="../../assets/logo.png">
     <icon-svg name="qq" />
     <p v-has="{action: 'admin', actions: ['admin', 'edit']}">{{ date | fromNow }}</p>
     <el-button>xxx</el-button>
@@ -11,7 +11,7 @@
 import testMixins from '@/mixins/test';
 
 export default {
-  name: 'home',
+  name: 'dashboard',
   mixins: [testMixins],
   components: {
   },
