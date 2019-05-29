@@ -1,3 +1,12 @@
+/** 是否是外部网址
+ *
+ * @param {string} path
+ * @returns {Boolean}
+ */
+export function isExternal(path) {
+  return /^(https?:|mailto:|tel:)/.test(path);
+}
+
 /**
  * 去掉前后空格
  *
