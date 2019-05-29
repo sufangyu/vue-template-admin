@@ -2,11 +2,13 @@ import Mock from 'mockjs';
 import { deserialize } from '../src/utils';
 
 import globalModal from './modules/global';
+import menus from './modules/menus';
 import user from './modules/user';
 
 const mocks = [
   ...user,
   ...globalModal,
+  ...menus,
 ];
 
 // for front mock

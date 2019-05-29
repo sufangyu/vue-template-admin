@@ -119,46 +119,38 @@ $fadeInOutFunction : cubic-bezier(0.55, 0, 0.55, 0.2);
 // ---
 // app
 $app-header-height       : 64px;
+$app-sider-logo-fill     : #002140;
+$app-sider-menu-fill     : #001529;
+
+// sidebar
+$app-sider-width         : 256px;
+$app-sider-width-min     : 80px;
+$menu-text               : #a6aaae;
+$menu-text-active        : #ffffff;
+$sub-menu-text-active    : #f4f4f5;
+$menu-bg                 : $app-sider-menu-fill;
+$menu-bg-active          : #1890ff;
+$menu-hover              : #263445;
+$sub-menu-bg             : #000c17;
+$sub-menu-hover          : #001528;
+
 
 // search-bar
-$search-bar-fill         : $fill-base;
-$search-bar-fill-dark    : $brand-primary;
-$search-bar-height       : 44 * $hd;
-$search-bar-input-height : 28 * $hd;
-$search-bar-font-size    : 15 * $hd;
 
 
 // navbar
-$navbar-fill                    : $fill-base;
-$navbar-color-text-base         : $color-text-base;
-$navbar-fill-dark               : $brand-primary;
-$navbar-color-text-base-inverse : $color-text-base-inverse;
-$navbar-height                  : 44 * $hd;
+
 
 // tab-bar
-$tab-bar-fill          : $fill-base;
-$tab-bar-height        : 44 * $hd;
-
 
 // notice-bar
-$notice-bar-height     : 36 * $hd;
-$notice-bar-color-text : #f76a24;
-$notice-bar-fill       : #fefcec;
-$notice-bar-font-size  : $font-size-base;
 
 
 // badge
-$badge-fill-base       : $brand-important;
-$badge-font-size-base  : $font-size-caption-sm;
-$badge-color-text-base : $color-text-base-inverse;
-$badge-shadow-color    : $fill-base;
-$badge-size-base-sm    : 8 * $hd;
-$badge-size-base-md    : 20 * $hd;
 
 
 // list
-$list-thumb-size       : 24 * $hd;
-$list-arrow-size       : 14 * $hd;
+
 
 // menu
 $menu-thumb-size       : 18 * $hd;
@@ -205,6 +197,7 @@ $pagination-button-background-active   : $fill-tap;
 $pagination-button-background-disabled : $fill-disabled;
 $pagination-dot-size                   : 10 * $hd;
 
+
 // steps
 $steps-box-small                       : 18 * $hd;
 $steps-box-large                       : 22 * $hd;
@@ -222,11 +215,9 @@ $steps-content-width-max               : 80 * $hd;
 
 
 // tabs
-$tab-height            : 44 * $hd;
 
 
 // accordion
-$accordion-height      : 44 * $hd;
 
 
 // divider
@@ -236,13 +227,9 @@ $divider-spacing-lg     : 55 * $hd;
 
 
 // notification & toast
-$notification-fill-base : $fill-base;
-$toast-fill-base : rgba(0,0,0,0.75);
 
 
 // dialog & modal
-$modal-button-size-ios     : 50px;
-$modal-button-size-android : 32px;
 
 
 // z-index
@@ -254,3 +241,17 @@ $picker-zindex          : 1000;
 $popup-zindex           : 999;
 $modal-zindex           : 999;     // modal.alert 应该最大，其他应该较小
 $tabs-pagination-zindex : 999;
+
+
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $menu-text;
+  menuTextActive: $menu-text-active;
+  subMenuTextActive: $sub-menu-text-active;
+  menuBg: $menu-bg;
+  menuHover: $menu-hover;
+  subMenuBg: $sub-menu-bg;
+  subMenuHover: $sub-menu-hover;
+}

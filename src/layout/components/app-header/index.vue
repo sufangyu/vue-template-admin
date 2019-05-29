@@ -1,10 +1,13 @@
 <template>
-  <header class="app-layout-header fixed">
+  <header
+    class="app-layout-header fixed"
+    :class="{ 'min': !sidebar.opened }"
+  >
     <div class="app-layout-header-inner">
       <div class="app-layout-header-left">
         <hamburger
-          @toggleClick="toggleSideBar"
-          :is-actived="opened"
+          @toggleClick="handleToggleSideBar"
+          :is-actived="sidebar.opened"
           class="hamburger-container"
         />
       </div>
@@ -82,6 +85,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Hamburger from '@/components/hamburger';
 import Fullscreen from '@/components/fullscreen';
 import Messages from './messages/index';
@@ -105,9 +109,14 @@ export default {
       },
     };
   },
+  computed: {
+    ...mapGetters([
+      'sidebar',
+    ]),
+  },
   methods: {
-    toggleSideBar() {
-      this.opened = !this.opened;
+    handleToggleSideBar() {
+      this.$store.dispatch('toggleSidebar');
     },
     /**
      * 设置 语言
@@ -154,11 +163,12 @@ export default {
 
     &-inner {
       position: relative;
-      z-index: $popover-zindex;
+      z-index: 9;
       height: $app-header-height;
       line-height: $app-header-height;
       background-color: $fill-base;
       box-shadow: 0 1px 4px rgba(0,21,41,.08);
+      transition: width .2s;
 
       display: flex;
       justify-content: space-between;
@@ -176,8 +186,8 @@ export default {
     }
 
     .hamburger-container {
-      padding: 20px 20px;
-      line-height: 46px;
+      padding: 0 20px;
+      line-height: $app-header-height;
       cursor: pointer;
       transition: background .3s;
       -webkit-tap-highlight-color:transparent;
@@ -232,8 +242,14 @@ export default {
       .app-layout-header-inner {
         position: fixed;
         top: 0;
-        left: 0;
         right: 0;
+        // left: $app-sider-width;
+        width: calc(100% - #{$app-sider-width});
+      }
+    }
+    &.min {
+      .app-layout-header-inner {
+        width: calc(100% - #{$app-sider-width-min});
       }
     }
 

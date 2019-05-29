@@ -10,7 +10,12 @@
 </template>
 
 <script>
-import { AppSider, AppHeader, AppBody, AppFooter } from './components/index';
+import {
+  AppSider,
+  AppHeader,
+  AppBody,
+  AppFooter,
+} from './components/index';
 
 export default {
   name: 'Layout',
@@ -25,7 +30,11 @@ export default {
 
 <style lang="scss" scoped>
 .app-layout {
+  display: flex;
+  flex-direction: row;
+
   &-main {
+    flex: auto;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
