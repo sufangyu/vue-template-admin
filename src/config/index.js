@@ -19,3 +19,7 @@ export const LANGUAGES = [
   { name: '中文简体', lang: 'zh' },
   { name: 'English', lang: 'en' },
 ];
+
+
+// 是否开启 mock data
+export const HAS_MOCK = true;
