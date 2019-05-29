@@ -1,10 +1,11 @@
-import { getToken, setToken } from '@/utils/auth';
-import { loginByUsername } from '@/api/account';
+import { getToken, setToken, removeToken } from '@/utils/auth';
+import { loginByUsername, getUserInfo } from '@/api/account';
+import { resetRouter } from '@/router';
 
 const user = {
   state: {
-    account: {},
-    token: getToken(),
+    account: null,
+    token: getToken() || '',
   },
   getters: {
     account: state => state.account,
@@ -30,10 +31,48 @@ const user = {
         }
       });
     },
+    // 获取用户信息
+    getUserInfo({ commit, state }) {
+      return new Promise(async (resolve, reject) => {
+        try {
+          const params = {
+            token: state.token,
+          };
+          const res = await getUserInfo(params);
+          if (!res.success) {
+            resolve(res);
+          } else {
+            const { data } = res;
+            commit('SET_ACCOUNT', data);
+            resolve(res);
+          }
+        } catch (error) {
+          reject(error);
+        }
+      });
+    },
+    // 退出登录
+    logout({ commit }) {
+      console.log('退出登录');
+      return new Promise((resolve) => {
+        commit('SET_TOKEN', '');
+        commit('SET_ACCOUNT', null);
+        removeToken();
+        resetRouter();
+        resolve();
+      });
+    },
   },
   mutations: {
+    SET_ACCOUNT: (state, account) => {
+      state.account = account;
+    },
     SET_TOKEN: (state, token) => {
       state.token = token;
+    },
+    LOGOUT: (state) => {
+      state.account = null;
+      state.token = '';
     },
   },
 };

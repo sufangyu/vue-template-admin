@@ -12,6 +12,16 @@ export const loginByUsername = (data) => {
 };
 
 
+export const getUserInfo = (params = {}) => {
+  const url = `${API_BASE}/account/user`;
+
+  return http.get({
+    url,
+    params,
+  });
+};
+
+
 export const logout = (data) => {
   const url = `${API_BASE}/account/logout`;
 

@@ -60,7 +60,7 @@
           <el-dropdown class="action-button" trigger="hover" placement="top">
             <div class="account-content">
               <icon-svg class="avatar" name="user" />
-              <span class="name">{{account.nickname || account.username || '---'}}</span>
+              <span class="name">{{account ? (account.nickname || '---') : '---'}}</span>
             </div>
             <el-dropdown-menu slot="dropdown" placement="bottom-end">
               <el-dropdown-item>
@@ -101,17 +101,14 @@ export default {
   },
   data() {
     return {
-      opened: false,
       unreadCount: 0,
       languages: LANGUAGES,
-      account: {
-        username: '张三疯',
-      },
     };
   },
   computed: {
     ...mapGetters([
       'sidebar',
+      'account',
     ]),
   },
   methods: {
@@ -130,10 +127,9 @@ export default {
      * 退出登录
      */
     async handleLogout() {
-      console.log('退出登录');
-      // await this.$store.dispatch('logOut');
-      // // 退出后, 重新实例化 VUE 路由器对象以避免 bug
-      // location.reload();
+      await this.$store.dispatch('logout');
+      // redirect to login
+      this.$router.replace('/login');
     },
     /**
      * 显示全局信息中心

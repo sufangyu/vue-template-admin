@@ -2,9 +2,11 @@ import Vue from 'vue';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-import App from './App.vue';
+import { HAS_MOCK } from './config';
+import App from './App';
 import router from './router';
 import store from './store';
+import './permission';
 import './icons';
 import * as filters from './filters';
 import * as directives from './directives';
@@ -27,7 +29,7 @@ Object.keys(directives).forEach((key) => {
  * Currently MockJs will be used in the production environment,
  * please remove it before going online! ! !
  */
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development' && HAS_MOCK) {
   // eslint-disable-next-line global-require
   const { mockXHR } = require('../mock');
   mockXHR();

@@ -1,5 +1,5 @@
 import Mock from 'mockjs';
-import { deserialize } from '../src/utils';
+import { getQueryObject } from '../src/utils';
 
 import globalModal from './modules/global';
 import menus from './modules/menus';
@@ -38,7 +38,7 @@ export function mockXHR() {
         result = respond({
           method: type,
           body: JSON.parse(body),
-          query: deserialize(url),
+          query: getQueryObject(url),
         });
       } else {
         result = respond;

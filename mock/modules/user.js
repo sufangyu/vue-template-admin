@@ -9,30 +9,28 @@ const TOKENS = {
   },
 };
 
-// const USERS = {
-//   'admin-token': {
-//     roles: ['admin'],
-//     introduction: 'I am a super administrator',
-//     name: '超级管理员',
-//     password: '123456',
-//     token: 'admin-token',
-//     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-//   },
-//   'editor-token': {
-//     roles: ['editor'],
-//     introduction: 'I am an editor',
-//     password: '123456',
-//     name: '张三疯',
-//     token: 'editor-token',
-//     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-//   },
-// };
+const USERS = {
+  'admin-token': {
+    roles: ['admin'],
+    introduction: 'I am a super administrator',
+    nickname: '超级管理员',
+    token: 'admin-token',
+    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+  },
+  'editor-token': {
+    roles: ['editor'],
+    introduction: 'I am an editor',
+    nickname: '张三疯',
+    token: 'editor-token',
+    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+  },
+};
 
 
 export default [
   // login
   {
-    url: '/account/login',
+    url: 'account/login',
     type: 'post',
     response: (config) => {
       const { username, password } = config.body;
@@ -52,6 +50,31 @@ export default [
         data: {
           token: user.token,
         },
+      };
+    },
+  },
+  // user
+  {
+    url: 'account/user',
+    type: 'get',
+    request: (res) => {
+      console.log(res);
+    },
+    response: (config) => {
+      const { token } = config.query;
+      const user = USERS[token];
+      if (!user) {
+        return {
+          success: false,
+          message: '获取用户信息失败',
+          data: null,
+        };
+      }
+
+      return {
+        success: true,
+        message: 'success',
+        data: user,
       };
     },
   },
