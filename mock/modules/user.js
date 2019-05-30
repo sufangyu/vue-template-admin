@@ -15,14 +15,14 @@ const USERS = {
     introduction: 'I am a super administrator',
     nickname: '超级管理员',
     token: 'admin-token',
-    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    avatar: 'https://avatars3.githubusercontent.com/u/1852629',
   },
   'editor-token': {
     roles: ['editor'],
     introduction: 'I am an editor',
     nickname: '张三疯',
     token: 'editor-token',
-    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    avatar: 'https://avatars3.githubusercontent.com/u/1852629',
   },
 };
 

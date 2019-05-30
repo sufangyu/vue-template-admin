@@ -58,8 +58,9 @@
         <!-- 账户操作 -->
         <div class="action">
           <el-dropdown class="action-button" trigger="hover" placement="top">
-            <div class="account-content">
-              <icon-svg class="avatar" name="user" />
+            <div class="action-button-inner">
+              <icon-svg v-if="!account.avatar" class="avatar" name="user" />
+              <img class="avatar" v-if="account.avatar" :src="account.avatar" alt="">
               <span class="name">{{account ? (account.nickname || '---') : '---'}}</span>
             </div>
             <el-dropdown-menu slot="dropdown" placement="bottom-end">
@@ -211,6 +212,11 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &-inner {
+          display: flex;
+          align-items: center;
+        }
       }
 
       &:hover {
@@ -221,9 +227,14 @@ export default {
         font-size: 14px;
         margin-left: 8px;
         vertical-align: middle;
-        display: inline-block;
-        position: relative;
-        top: -1px;
+      }
+
+      .avatar {
+        display: block;
+        width: 28px;
+        height: 28px;
+        border-radius: 100%;
+        background-color: rgba(0, 0, 0, .05);
       }
 
       .el-badge {
