@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { Message } from 'element-ui';
-import { getToken, removeToken } from '@/utils/auth';
-// import router from '@/router';
+import { getToken } from '@/utils/auth';
+import store from '@/store';
+import router from '@/router';
 import { showFullScreenLoading, hideFullScreenLoading } from './request-helper';
 
 
@@ -55,12 +56,12 @@ const request = (defaults = {}) => {
 
   // response interceptor
   instance.interceptors.response.use(
-    (response) => {
+    async (response) => {
       hideFullScreenLoading();
       const { data } = response;
       return Promise.resolve(data);
     },
-    (error) => {
+    async (error) => {
       hideFullScreenLoading();
 
       if (error && error.response) {
@@ -91,10 +92,9 @@ const request = (defaults = {}) => {
             type: 'error',
             message: error.message,
           });
-          removeToken();
-          // router.replace('/login');
-          // // 重新刷新页面, 初始化 vue 的状态
-          // window.location.reload();
+          await store.dispatch('logout');
+          // redirect to login
+          router.replace('/login');
           return Promise.reject(error);
         }
 
