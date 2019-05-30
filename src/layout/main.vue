@@ -39,6 +39,11 @@ export default {
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
+
+    a {
+      color: $color-link;
+    }
   }
 
   &-body {

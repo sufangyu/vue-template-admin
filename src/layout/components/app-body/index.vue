@@ -1,19 +1,23 @@
 <template>
-  <header class="app-layout-body">
-    <router-view></router-view>
-  </header>
+  <section class="app-layout-body">
+    <transition name="fade-transform" mode="out-in">
+      <keep-alive :include="cachedViews">
+        <router-view :key="key" />
+      </keep-alive>
+    </transition>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'AppBody',
+  computed: {
+    cachedViews() {
+      return this.$store.state.tagsView ? this.$store.state.tagsView.cachedViews : [];
+    },
+    key() {
+      return this.$route.path;
+    },
+  },
 };
 </script>
-
-<style lang="scss" scoped>
-.app-layout-body {
-  a {
-    color: $color-link;
-  }
-}
-</style>
