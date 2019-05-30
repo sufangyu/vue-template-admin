@@ -1,4 +1,5 @@
 import { Message } from 'element-ui';
+import { getToken } from '@/utils/auth';
 import { getMenus } from '@/api/menus';
 
 const INIT_MENUS = [
@@ -21,7 +22,11 @@ const menu = {
   actions: {
     async getMenus({ commit }) {
       try {
-        const res = await getMenus();
+        const params = {
+          token: getToken(),
+        };
+
+        const res = await getMenus(params);
         if (!res.success) {
           Message({
             type: 'error',
