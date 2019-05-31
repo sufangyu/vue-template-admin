@@ -14,5 +14,6 @@ module.exports = {
     '//cdn.bootcss.com/js-cookie/2.2.0/js.cookie.min.js',
     '//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js',
     '//unpkg.com/element-ui/lib/index.js',
+    '//cdn.bootcss.com/screenfull.js/4.2.0/screenfull.min.js',
   ],
 };
