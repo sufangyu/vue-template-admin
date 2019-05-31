@@ -5,7 +5,7 @@ export default [
     path: '/permission',
     name: 'permission',
     component: Layout,
-    redirect: '/permission',
+    redirect: 'noRedirect',
     meta: {
       title: '权限测试',
       icon: 'permission',
@@ -18,6 +18,7 @@ export default [
         meta: {
           icon: 'permission',
           title: '页面权限',
+          desc: '页面权限: 不同权限的用户, 显示不同的菜单入口',
           noCache: true,
           auth: true,
         },
@@ -28,7 +29,9 @@ export default [
         component: () => import('@/views/permission/directive'),
         meta: {
           icon: 'permission',
-          title: '页面权限',
+          title: '指令权限',
+          desc: '指令权限: 不同权限的用户, 显示不同的菜单入口',
+          pageHeader: ['breadcrumb', 'pageInfo'],
           noCache: true,
           auth: true,
         },

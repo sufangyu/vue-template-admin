@@ -12,7 +12,7 @@ export default [
         component: () => import('@/views/dashboard/index'),
         meta: {
           icon: 'home',
-          title: '控制台',
+          title: '首页',
           noCache: true,
           auth: true,
         },
