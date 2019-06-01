@@ -86,6 +86,10 @@ export default {
     min-height: 100vh;
     box-shadow: 2px 0 6px rgba(0,21,41,.35);
     color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
 
     &.min {
       width: $app-sider-width-min;

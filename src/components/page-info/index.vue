@@ -61,7 +61,7 @@ export default {
 <style lang="scss" scoped>
 .page-info {
   .title {
-    margin: 0 0 16px 0;
+    // margin: 0 0 16px 0;
     font-size: 20px;
     font-weight: 500;
     color: $page-info-title-color-text;
@@ -69,6 +69,7 @@ export default {
   }
 
   .desc {
+    margin-top: 16px;
     font-size: 14px;
     line-height: 1.2;
     color: $page-info-desc-color-text;

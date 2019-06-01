@@ -23,3 +23,25 @@ export const LANGUAGES = [
 
 // 是否开启 mock data
 export const HAS_MOCK = true;
+
+
+// 首页路由配置
+export const HOME_ROUTE = {
+  path: '/dashboard',
+  name: 'dashboard',
+  meta: {
+    title: '首页',
+    icon: 'document',
+  },
+};
+
+// 初始化路由配置
+const INIT_ROUTERS = [HOME_ROUTE];
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line global-require
+  const { routerLabsMap } = require('@/router');
+  INIT_ROUTERS.push(...routerLabsMap);
+}
+export const INIT_MENUS = [
+  ...INIT_ROUTERS,
+];

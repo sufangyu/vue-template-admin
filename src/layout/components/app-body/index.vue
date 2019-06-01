@@ -61,7 +61,6 @@ export default {
       if (last.pageHeader && last.pageHeader.constructor !== Array) {
         console.warn(`${last.title}'s pageHeader config was't array`);
       } else if (last.pageHeader !== undefined) {
-        console.log(last.pageHeader);
         this.pageHeader = last.pageHeader;
       }
     },
@@ -70,16 +69,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.app-layout-body {
+  flex: auto;
+  min-height: 0;
+}
 .page-header {
   padding: 16px 32px;
   background: $fill-base;
   border-bottom: 1px solid #e8e8e8;
 
   .app-breadcrumb {
-    margin-bottom: 16px;
+    + .page-info {
+      margin-top: 16px;
+    }
   }
 }
 .page-content {
-  margin: 24px;
+  margin: 24px 24px 0;
 }
 </style>

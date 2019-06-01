@@ -1,16 +1,7 @@
 import { Message } from 'element-ui';
 import { getToken } from '@/utils/auth';
 import { getMenus } from '@/api/menus';
-
-const INIT_MENUS = [
-  {
-    path: '/dashboard',
-    meta: {
-      title: '工作台',
-      icon: 'document',
-    },
-  },
-];
+import { INIT_MENUS } from '@/config';
 
 const menu = {
   state: {

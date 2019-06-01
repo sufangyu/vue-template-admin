@@ -19,6 +19,8 @@ export { routerConstantMap };
 // 异步动态路由
 export { routerAsyncMap };
 
+export { routerLabsMap };
+
 const createRouter = () => new Router({
   // mode: 'history', // require service support
   routes: routerMap || [],

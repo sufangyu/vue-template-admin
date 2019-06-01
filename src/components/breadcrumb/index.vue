@@ -19,6 +19,7 @@
 
 <script>
 import pathToRegexp from 'path-to-regexp';
+import { HOME_ROUTE } from '@/config';
 
 export default {
   name: 'Breadcrumb',
@@ -46,7 +47,7 @@ export default {
       const first = matched[0];
 
       if (!this.isDashboard(first)) {
-        matched = [{ path: '/dashboard', meta: { title: '首页' } }].concat(matched);
+        matched = [HOME_ROUTE].concat(matched);
       }
 
       this.levelList = matched.filter((item) => {
@@ -58,7 +59,7 @@ export default {
       if (!name) {
         return false;
       }
-      return name.trim().toLocaleLowerCase() === 'Dashboard'.toLocaleLowerCase();
+      return name.trim().toLocaleLowerCase() === HOME_ROUTE.name.toLocaleLowerCase();
     },
     pathCompile(path) {
       // To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
