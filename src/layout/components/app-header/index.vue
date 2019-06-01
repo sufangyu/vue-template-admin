@@ -13,20 +13,32 @@
       </div>
 
       <div class="app-layout-header-right">
-        <el-tooltip effect="dark" content="使用文档" placement="bottom">
+        <el-tooltip
+          effect="dark"
+          content="使用文档"
+          placement="bottom"
+          class="hide-in-mobile"
+        >
           <a href="https://www.github.com" target="_blank" class="action action-document">
             <icon-svg name="help" />
           </a>
         </el-tooltip>
 
-        <el-tooltip effect="dark" content="全屏" placement="bottom">
+        <el-tooltip
+          effect="dark"
+          content="全屏"
+          placement="bottom"
+        >
           <span class="action action-fullscreen">
             <fullscreen />
           </span>
         </el-tooltip>
 
         <!-- 切换语言. 超过2种语言配置才显示 -->
-        <div class="action" v-if="languages.length > 1">
+        <div
+          v-if="languages.length > 1"
+          class="action hide-in-mobile"
+        >
           <el-dropdown trigger="hover" placement="top">
             <div class="action-button">
               <icon-svg name="language" />
@@ -227,6 +239,7 @@ export default {
         font-size: 14px;
         margin-left: 8px;
         vertical-align: middle;
+        line-height: 1;
       }
 
       .avatar {
@@ -235,6 +248,7 @@ export default {
         height: 28px;
         border-radius: 100%;
         background-color: rgba(0, 0, 0, .05);
+        line-height: 1;
       }
 
       .el-badge {

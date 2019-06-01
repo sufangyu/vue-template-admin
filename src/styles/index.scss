@@ -97,7 +97,16 @@ img {
   max-width: 100%;
 }
 
-// float、align
+
+// mobile devices was hided
+@media only screen and (max-width: 640px) {
+  .hide-in-mobile {
+    display: none !important;
+  }
+}
+
+
+// common style, like: float、align
 .align {
   &-left {
     text-align: left;
@@ -167,5 +176,12 @@ img {
     .el-card__header {
       background-color: $fill-grey;
     }
+  }
+}
+
+// tabs
+.el-tabs {
+  &.tabs-simple {
+    box-shadow: none;
   }
 }
