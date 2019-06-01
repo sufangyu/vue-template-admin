@@ -211,7 +211,7 @@ export default {
       display: inline-block;
       cursor: pointer;
       vertical-align: middle;
-      font-size: 22px;
+      font-size: 20px;
       transition: background-color 0.25s;
 
       &-button {
