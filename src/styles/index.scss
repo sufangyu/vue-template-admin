@@ -121,14 +121,51 @@ img {
   }
 }
 
+
 // button
 .button-block {
   width: 100%;
 }
 
+
 // form
 .form-item-normal {
   .el-form-item__content {
     line-height: 1;
+  }
+}
+
+// card
+.el-card {
+  margin-bottom: 16px;
+  
+  &__header {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .title {
+      font-size: $font-size-subhead;
+    }
+
+    .subtitle {
+      opacity: 0.5;
+      margin-left: 16px;
+      margin-right: 16px;
+      font-size: $font-size-caption-sm;
+    }
+
+    .extra {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.card-gray {
+    .el-card__header {
+      background-color: $fill-grey;
+    }
   }
 }
