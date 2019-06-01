@@ -22,6 +22,15 @@ export default [
           // pageHeader: ['breadcrumb'],
         },
       },
+      {
+        path: 'tabs-page',
+        name: 'labsTabsPage',
+        component: () => import('@/views/labs/tabs-page'),
+        meta: {
+          title: '标签页',
+          pageHeader: ['breadcrumb'],
+        },
+      },
     ],
   },
 ];
