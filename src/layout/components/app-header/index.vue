@@ -172,7 +172,7 @@ export default {
 
     &-inner {
       position: relative;
-      z-index: 9;
+      z-index: 2009;
       height: $app-header-height;
       line-height: $app-header-height;
       background-color: $fill-base;

@@ -82,7 +82,7 @@ export default {
     background: $app-sider-menu-fill;
     transition: all .2s;
     position: relative;
-    z-index: 10;
+    z-index: 2010;
     min-height: 100vh;
     box-shadow: 2px 0 6px rgba(0,21,41,.35);
     color: #fff;
