@@ -6,6 +6,7 @@
         <card
           class="box-card"
           shadow="hover"
+          bottom
         >
           <h3 slot="title">卡片名称</h3>
           <h4 slot="subtitle">副标题</h4>
@@ -14,7 +15,6 @@
             size="small"
             type="text"
           >操作按钮</el-button>
-
           <div
             v-for="o in 4"
             :key="o"
@@ -28,6 +28,8 @@
         <card
           class="box-card"
           shadow="hover"
+          bottom
+          borderDisbled
         >
           <h3 slot="title">卡片名称</h3>
           <div
@@ -49,6 +51,7 @@
           shadow="hover"
           title="卡片名称"
           subtitle="副标题"
+          bottom
           gray
         >
           <div
@@ -79,13 +82,8 @@
 </template>
 
 <script>
-import Card from '@/components/card';
-
 export default {
-  name: 'CardDemo',
-  components: {
-    Card,
-  },
+  name: 'LabsCardDemo',
 };
 </script>
 

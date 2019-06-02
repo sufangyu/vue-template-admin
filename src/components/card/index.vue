@@ -37,8 +37,18 @@ export default {
       type: String,
       default: '',
     },
-    // 灰色标题
+    // 是否使用灰色标题
     gray: {
+      type: Boolean,
+      default: false,
+    },
+    // 是否启用底部编剧
+    bottom: {
+      type: Boolean,
+      default: false,
+    },
+    // 是否不显示标题边线
+    borderDisbled: {
       type: Boolean,
       default: false,
     },
@@ -47,6 +57,8 @@ export default {
     classNames() {
       return {
         'card-gray': this.gray,
+        'card-bottom': this.bottom,
+        'card-header-border-none': this.borderDisbled,
       };
     },
   },
