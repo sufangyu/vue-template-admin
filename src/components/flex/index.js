@@ -1,5 +1,5 @@
-import Flex from './flex.vue';
-import FlexItem from './flex-item.vue';
+import Flex from './flex';
+import FlexItem from './flex-item';
 
 export default Flex;
 export { FlexItem };

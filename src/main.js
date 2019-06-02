@@ -7,6 +7,7 @@ import App from './App';
 import router from './router';
 import store from './store';
 import './permission';
+import './global-components';
 import './icons';
 import * as filters from './filters';
 import * as directives from './directives';

@@ -1,3 +1,3 @@
-import WingBlank from './wing-blank.vue';
+import WingBlank from './wing-blank';
 
 export default WingBlank;

@@ -1,3 +1,3 @@
-import WhiteSpace from './white-space.vue';
+import WhiteSpace from './white-space';
 
 export default WhiteSpace;
