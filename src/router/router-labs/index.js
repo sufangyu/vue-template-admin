@@ -6,7 +6,6 @@ export default [
     name: 'labs',
     component: Layout,
     redirect: '/labs/index',
-    alwaysShow: true,
     meta: {
       icon: 'labs',
       title: '实验室',
@@ -29,6 +28,26 @@ export default [
         meta: {
           title: '标签页',
           pageHeader: ['breadcrumb'],
+        },
+      },
+    ],
+  },
+  {
+    path: '/list',
+    name: 'list',
+    component: Layout,
+    redirect: '/list/table-list',
+    meta: {
+      title: '列表页面',
+    },
+    children: [
+      {
+        path: 'table-list',
+        name: 'listTable',
+        component: () => import('@/views/list/table-list'),
+        meta: {
+          icon: 'labs',
+          title: '查询表格',
         },
       },
     ],

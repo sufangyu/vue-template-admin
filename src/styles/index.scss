@@ -99,14 +99,21 @@ img {
 
 
 // mobile devices was hided
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 575px) {
   .hide-in-mobile {
     display: none !important;
   }
+
+  .app-layout-body {
+    .page-content {
+      margin: 24px 0 0;
+    }
+  }
+
 }
 
 
-// common style, like: float、align
+/* common style, like: float、align */
 .align {
   &-left {
     text-align: left;
@@ -131,12 +138,6 @@ img {
 }
 
 
-// button
-.button-block {
-  width: 100%;
-}
-
-
 // form
 .form-item-normal {
   .el-form-item__content {
@@ -144,11 +145,31 @@ img {
   }
 }
 
+
+/* reset element-ui */
 // card
 .el-card {
-  margin-bottom: 16px;
-  
-  &__header {
+  border: none;
+
+  // has bottom
+  &.card-bottom {
+    margin-bottom: 20px;
+  }
+
+  // header-enborder
+  &.card-header-border-none {
+    .el-card__header {
+      border: none;
+    }
+  }
+
+  &.card-gray {
+    .el-card__header {
+      background-color: $fill-grey;
+    }
+  }
+
+    &__header {
     display: flex;
     align-items: center;
     position: relative;
@@ -170,12 +191,91 @@ img {
       top: 50%;
       transform: translateY(-50%);
     }
+  }  
+}
+
+// pagination
+.el-pagination {
+  font-weight: 400;
+}
+
+
+/* step */
+.el-step__head.is-process {
+  color: #808080;
+  border-color: #808080;
+}
+.el-step__title.is-process {
+  font-weight: 400;
+  color: #808080;
+}
+.el-step__description.is-process {
+  color: #808080;
+}
+
+
+/* dialog */
+.dialog-full {
+  .el-dialog {
+    max-width: 860px;
   }
 
-  &.card-gray {
-    .el-card__header {
-      background-color: $fill-grey;
+  &-large {
+    .el-dialog {
+      max-width: 1200px;
     }
+  }
+
+  &-medium {
+    .el-dialog {
+      max-width: 860px;
+    }
+  }
+
+  &-small {
+    .el-dialog {
+      max-width: 640px;
+    }
+  }
+
+  &-min {
+    .el-dialog {
+      max-width: 320px;
+    }
+  }
+}
+
+
+/* 表单 */
+.form {
+  max-width: 640px;
+
+  &-label-min {
+    .el-form-item__label {
+      line-height: 20px;
+    }
+  }
+}
+
+
+/* 按钮 */
+.button-block {
+  width: 100%;
+}
+.el-button {
+  + .button-confirm {
+    margin-left: 10px;
+  }
+}
+.button-confirm {
+  + .el-button,
+  + .el-dropdown {
+    margin-left: 10px;
+  }
+}
+.action-inline {
+  + .action-inline {
+    margin-left: 10px;
   }
 }
 
@@ -183,5 +283,164 @@ img {
 .el-tabs {
   &.tabs-simple {
     box-shadow: none;
+  }
+}
+
+
+/* 列表 筛选查询表单 */
+.list-query {
+  &-form {
+    display: grid;
+    margin: -10px;
+    grid-template-columns: 1fr 1fr 1fr;
+  
+    .el-form-item {
+      display: flex;
+      margin: 10px;
+  
+      &__content {
+        flex: 1;      
+      }
+    }
+
+    .input-with-select {
+      .el-select .el-input {
+        width: 90px;
+      }
+      .el-input-group__prepend {
+        background-color: #fff;
+      }
+    }
+  
+    .el-input,
+      .el-select,
+      .el-date-editor {
+        width: 100%;
+      }
+  
+    .form-buttons {
+      min-width: 160px;
+    }
+    .el-date-editor--daterange.el-input,
+    .el-date-editor--daterange.el-input__inner,
+    .el-date-editor--timerange.el-input,
+    .el-date-editor--timerange.el-input__inner {
+      width: auto;
+    }
+  
+    .el-date-editor .el-range-separator {
+      width: 25px;
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .list-query-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 640px) {
+  .list-query-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 列表底部区域 */
+.list-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+
+  &-center {
+    justify-content: center;
+  }
+
+  &-left,
+  &-right {
+    padding: 10px 0;
+  }
+}
+@media screen and (max-width: 1120px) {
+  .list-footer {
+    .el-pagination {
+      .el-pagination__sizes {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .list-footer {
+    .el-pagination {
+      .el-pagination__jump {
+        display: none;
+      }
+      .el-pagination__total {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 542px) {
+  .list-footer {
+    .el-pagination {
+      padding: 0;
+
+      .btn-prev,
+      .btn-next {
+        margin: 0;
+      }
+      .el-pager {
+        .number:not(:last-child) {
+          display: none;
+
+          &.active {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 360px) {
+  .list-footer {
+    .btn-quickprev,
+    .btn-quicknext {
+      display: none;
+    }
+  }
+}
+
+/* 列表 操作 */
+.list-operator {
+  margin-bottom: 16px;
+
+  .el-button + .el-dropdown {
+    margin-left: 10px;
+  }
+}
+
+/* 列表提示信息 */
+.list-alert {
+  margin-bottom: 16px;
+
+  &-content {
+    font-size: 13px;
+    line-height: 1.1;
+  }
+
+  .action-line {
+    color: #409EFF;
+    cursor: pointer;
+    margin-left: 15px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  strong {
+    padding: 0 3px;
+    color: #409EFF;
   }
 }
