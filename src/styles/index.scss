@@ -97,6 +97,15 @@ img {
   max-width: 100%;
 }
 
+code {
+  background: #eef1f6;
+  padding: 15px 16px;
+  margin-bottom: 20px;
+  display: block;
+  line-height: 36px;
+  font-size: 15px;
+  font-family: $font-family-code;
+}
 
 // mobile devices was hided
 @media only screen and (max-width: 575px) {
@@ -113,7 +122,7 @@ img {
 }
 
 
-/* common style, like: float、align */
+/* common style, like: float、align、flex */
 .align {
   &-left {
     text-align: left;
@@ -136,6 +145,34 @@ img {
     float: none;
   }
 }
+.flex {
+  display: flex;
+
+  &-1 {
+    flex: 1;
+  }
+
+  &-align-center {
+    align-items: center;
+  }
+}
+
+.row {
+  &-flex-space-around {
+    justify-content: space-around;
+  }
+  &-flex-space-between {
+    justify-content: space-between;
+  }
+  &-flex-center {
+    justify-content: center;
+  }
+
+  &-flex-middle {
+    align-items: center;
+  }
+}
+
 
 
 // form
