@@ -85,19 +85,6 @@
       </div>
     </card>
 
-    <el-popover
-      placement="top"
-      width="160"
-      v-model="visible"
-    >
-      <p>这是一段内容这是一段内容确定删除吗？</p>
-      <div style="text-align: right; margin: 0">
-        <el-button size="mini" type="text" @click="visible = false">取消</el-button>
-        <el-button type="primary" size="mini" @click="visible = false">确定</el-button>
-      </div>
-      <el-button slot="reference">删除</el-button>
-    </el-popover>
-
     <card
       title="表格列表"
       shadow="hover"
@@ -119,6 +106,7 @@
           description="确认要删除所选中的数据 ?"
           buttonLabel="批量删除"
           buttonSize="small"
+          buttonType="default"
           :disabled="selectionCount === 0"
           @confirm="handleDelMulti"
         />
@@ -155,7 +143,7 @@
         <el-table
           style="width: 100%"
           ref="multipleTable"
-          border
+          stripe
           :data="list"
           v-loading="loading"
           @selection-change="handleSelectionChange"
@@ -228,10 +216,11 @@
       <div class="list-footer">
         <div class="list-footer-left">
           <button-confirm
-            :visible.sync="visibleDelMulti"
-            buttonLabel="批量删除"
+            :visible.sync="visibleDelMulti2"
             description="确认要删除所选中的数据 ?"
-            size="small"
+            buttonLabel="批量删除"
+            buttonSize="small"
+            buttonType="default"
             :disabled="selectionCount === 0"
             @confirm="handleDelMulti"
           />
@@ -357,6 +346,7 @@ export default {
       loading: false,
       multipleSelection: [],
       visibleDelMulti: false,
+      visibleDelMulti2: false,
       list: [],
     };
   },
