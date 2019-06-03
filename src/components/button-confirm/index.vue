@@ -30,6 +30,7 @@
         slot="reference"
         v-bind="$attrs"
         :size="buttonSize"
+        :type="buttonType"
       >{{ buttonLabel }}</el-button>
     </slot>
   </el-popover>
@@ -58,6 +59,10 @@ export default {
     buttonSize: {
       type: String,
       default: 'mini',
+    },
+    buttonType: {
+      type: String,
+      default: 'danger',
     },
   },
   computed: {
