@@ -1,6 +1,7 @@
 import Layout from '@/layout';
 
 export default [
+  // labs
   {
     path: '/labs',
     name: 'labs',
@@ -32,6 +33,8 @@ export default [
       },
     ],
   },
+
+  // list
   {
     path: '/list',
     name: 'list',
@@ -46,8 +49,46 @@ export default [
         name: 'listTable',
         component: () => import('@/views/list/table-list'),
         meta: {
-          icon: 'labs',
+          icon: 'list',
           title: '查询表格',
+        },
+      },
+    ],
+  },
+
+  // component
+  {
+    path: '/components',
+    name: 'components',
+    component: Layout,
+    redirect: '/components/status',
+    meta: {
+      title: '组件',
+      icon: 'components',
+    },
+    children: [
+      {
+        path: 'status',
+        name: 'componentsStatus',
+        component: () => import('@/views/components-demo/status.vue'),
+        meta: {
+          title: '状态标签',
+        },
+      },
+      {
+        path: 'sticky',
+        name: 'componentsSticky',
+        component: () => import('@/views/components-demo/sticky.vue'),
+        meta: {
+          title: '滚动吸附',
+        },
+      },
+      {
+        path: 'count-to',
+        name: 'componentsCountTo',
+        component: () => import('@/views/components-demo/count-to.vue'),
+        meta: {
+          title: '计数效果',
         },
       },
     ],

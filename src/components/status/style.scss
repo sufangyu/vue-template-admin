@@ -1,0 +1,120 @@
+$default   : #d9d9d9;
+$success   : #52c41a;
+$processing: #1890ff;
+$error     : #f5222d;
+$warning   : #faad14;
+
+.status {
+  font-size: 14px;
+  color: rgba(0,0,0,.65);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: baseline;
+
+  &-type-tag {
+    display: inline-block;
+    padding: 0 10px;
+    height: 32px;
+    line-height: 30px;
+    font-size: 12px;
+    border-radius: 4px;
+    
+    .status-text {
+      margin-left: 0;
+      font-size: inherit;
+    }
+
+    &.status {
+      &-default {
+        border: 1px solid $default;
+        .status-text {
+          color: $default;
+        }
+      }
+      &-success {
+        border: 1px solid $success;
+        .status-text {
+          color: $success;
+        }
+      }
+      &-processing {
+        border: 1px solid $processing;
+        .status-text {
+          color: $processing;
+        }
+      }
+      &-error {
+        border: 1px solid $error;
+        .status-text {
+          color: $error;
+        }
+      }
+      &-warning {
+        border: 1px solid $warning;
+        .status-text {
+          color: $warning;
+        }
+      }
+    }
+
+    &.status {
+      &-medium {
+        height: 28px;
+        line-height: 26px;
+      }
+      &-small {
+        height: 24px;
+        padding: 0 8px;
+        line-height: 22px;
+        border-radius: 3px;
+        font-size: 12px;
+      }
+      &-mini {
+        height: 20px;
+        padding: 0 5px;
+        line-height: 19px;
+        border-radius: 2px;
+        font-size: 12px;
+      }
+    }
+
+    
+  }
+
+  &-dot {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+
+    &-default {
+      background-color: $default;
+    }
+    &-success {
+      background-color: $success;
+    }
+    &-processing {
+      background-color: $processing;
+    }
+    &-error {
+      background-color: $error;
+    }
+    &-warning {
+      background-color: $warning;
+    }
+  }
+
+  &-text {
+    color: rgba(0,0,0,.65);
+    font-size: 14px;
+    margin-left: 8px
+  }
+}

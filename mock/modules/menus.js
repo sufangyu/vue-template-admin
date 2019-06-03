@@ -89,13 +89,6 @@ const routersAdmin = [
     },
   },
   {
-    path: '/components',
-    meta: {
-      title: '组件',
-      icon: 'components',
-    },
-  },
-  {
     path: '/charts',
     meta: {
       title: '图表',
@@ -188,13 +181,6 @@ const routersOthers = [
         },
       },
     ],
-  },
-  {
-    path: '/components',
-    meta: {
-      title: '组件',
-      icon: 'components',
-    },
   },
   {
     path: 'https://www.github.com',
