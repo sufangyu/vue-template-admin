@@ -72,6 +72,10 @@ export default {
 .app-layout-body {
   flex: auto;
   min-height: 0;
+
+  a {
+    color: $color-link;
+  }
 }
 .page-header {
   padding: 16px 32px;
@@ -86,5 +90,18 @@ export default {
 }
 .page-content {
   margin: 24px 24px 0;
+}
+</style>
+
+<style lang="scss">
+.app-layout-body {
+  a {
+    color: $color-link;
+
+    &:hover,
+    &:active {
+      color: $color-link-hover;
+    }
+  }
 }
 </style>
