@@ -71,9 +71,9 @@
         <div class="action">
           <el-dropdown class="action-button" trigger="hover" placement="top">
             <div class="action-button-inner">
-              <icon-svg v-if="!account.avatar" class="avatar" name="user" />
-              <img class="avatar" v-if="account.avatar" :src="account.avatar" alt="">
-              <span class="name">{{account ? (account.nickname || '---') : '---'}}</span>
+              <icon-svg v-if="!account || !account.avatar" name="user" />
+              <img class="avatar" v-if="account && account.avatar" :src="account.avatar" alt="">
+              <span class="name">{{ account ? (account.nickname || '---') : '---' }}</span>
             </div>
             <el-dropdown-menu slot="dropdown" placement="bottom-end">
               <el-dropdown-item>
