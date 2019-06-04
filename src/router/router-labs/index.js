@@ -31,6 +31,14 @@ export default [
         },
       },
       {
+        path: 'flex',
+        name: 'labsFlex',
+        component: () => import('@/views/labs/flex'),
+        meta: {
+          title: '弹性布局',
+        },
+      },
+      {
         path: 'tabs-page',
         name: 'labsTabsPage',
         component: () => import('@/views/labs/tabs-page'),
