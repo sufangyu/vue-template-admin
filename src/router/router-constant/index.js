@@ -15,6 +15,7 @@ export default [
           title: '首页',
           noCache: true,
           auth: true,
+          pageHeader: [],
         },
       },
     ],
