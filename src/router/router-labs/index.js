@@ -23,6 +23,14 @@ export default [
         },
       },
       {
+        path: 'filter',
+        name: 'labsFilter',
+        component: () => import('@/views/labs/filter'),
+        meta: {
+          title: '全局过滤器',
+        },
+      },
+      {
         path: 'tabs-page',
         name: 'labsTabsPage',
         component: () => import('@/views/labs/tabs-page'),
