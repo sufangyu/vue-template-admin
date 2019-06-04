@@ -29,7 +29,7 @@
           class="box-card"
           shadow="hover"
           bottom
-          borderDisbled
+          borderDisabled
         >
           <h3 slot="title">卡片名称</h3>
           <div

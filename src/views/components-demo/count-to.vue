@@ -4,7 +4,7 @@
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
         <card
           shadow="hover"
-          borderDisbled
+          borderDisabled
           bottom
           title="基础示例"
         >
@@ -26,7 +26,7 @@
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
         <card
           shadow="hover"
-          borderDisbled
+          borderDisabled
           bottom
           title="递减示例"
         >
@@ -46,7 +46,7 @@
 
     <card
       shadow="hover"
-      borderDisbled
+      borderDisabled
       bottom
       title="自定义示例"
     >

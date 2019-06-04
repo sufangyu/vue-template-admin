@@ -48,7 +48,7 @@ export default {
       default: false,
     },
     // 是否不显示标题边线
-    borderDisbled: {
+    borderDisabled: {
       type: Boolean,
       default: false,
     },
@@ -58,7 +58,7 @@ export default {
       return {
         'card-gray': this.gray,
         'card-bottom': this.bottom,
-        'card-header-border-none': this.borderDisbled,
+        'card-header-border-none': this.borderDisabled,
       };
     },
   },

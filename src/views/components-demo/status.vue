@@ -5,7 +5,7 @@
         <card
           title="标签状态"
           shadow="hover"
-          borderDisbled
+          borderDisabled
           bottom
         >
           <div class="demo-item demo-inline">
@@ -29,7 +29,7 @@
         <card
           title="状态点"
           shadow="hover"
-          borderDisbled
+          borderDisabled
           bottom
         >
           <div class="demo-item demo-inline">

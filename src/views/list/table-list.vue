@@ -3,7 +3,7 @@
     <card
       title="查询条件"
       shadow="hover"
-      borderDisbled
+      borderDisabled
       bottom
     >
       <div class="list-query">
@@ -88,7 +88,7 @@
     <card
       title="表格列表"
       shadow="hover"
-      borderDisbled
+      borderDisabled
       bottom
     >
       <el-button
