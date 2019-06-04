@@ -74,7 +74,6 @@ body {
   font-size: $font-size-base;
   color: $color-text-base ;
   margin: 0 auto;
-  user-select: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -120,59 +119,6 @@ code {
   }
 
 }
-
-
-/* common style, like: float、align、flex */
-.align {
-  &-left {
-    text-align: left;
-  }
-  &-right {
-    text-align: right;
-  }
-  &-center {
-    text-align: center;
-  }
-}
-.float {
-  &-left {
-    float: left;
-  }
-  &-right {
-    float: right;
-  }
-  &-none {
-    float: none;
-  }
-}
-.flex {
-  display: flex;
-
-  &-1 {
-    flex: 1;
-  }
-
-  &-align-center {
-    align-items: center;
-  }
-}
-
-.row {
-  &-flex-space-around {
-    justify-content: space-around;
-  }
-  &-flex-space-between {
-    justify-content: space-between;
-  }
-  &-flex-center {
-    justify-content: center;
-  }
-
-  &-flex-middle {
-    align-items: center;
-  }
-}
-
 
 
 // form

@@ -6,4 +6,5 @@
 
 <style lang="scss">
 @import "~@/styles/index";
+@import "~@/styles/public";
 </style>
