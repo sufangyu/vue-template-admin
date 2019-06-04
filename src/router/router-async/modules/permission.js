@@ -3,7 +3,7 @@ import Layout from '@/layout';
 export default [
   {
     path: '/permission',
-    name: 'permission',
+    name: 'Permission',
     component: Layout,
     redirect: 'noRedirect',
     meta: {

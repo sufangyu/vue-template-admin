@@ -8,7 +8,7 @@ export default [
     children: [
       {
         path: 'dashboard',
-        name: 'dashboard',
+        name: 'Dashboard',
         component: () => import('@/views/dashboard/index'),
         meta: {
           icon: 'home',
@@ -21,25 +21,25 @@ export default [
   },
   {
     path: '/login',
-    name: 'login',
+    name: 'Login',
     component: () => import('@/views/account/login'),
     hidden: true,
   },
   {
     path: '/register',
-    name: 'register',
+    name: 'Register',
     component: () => import('@/views/account/register'),
     hidden: true,
   },
   {
     path: '/404',
-    name: 'notFound',
+    name: 'NotFound',
     component: () => import('@/views/error-page/404'),
     hidden: true,
   },
   {
     path: '/401',
-    name: 'noAuth',
+    name: 'NoAuth',
     component: () => import('@/views/error-page/401'),
     hidden: true,
   },
