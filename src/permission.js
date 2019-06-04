@@ -26,8 +26,9 @@ router.beforeEach(async (to, from, next) => {
             await store.dispatch('getUserInfo');
           } catch (error) {
             console.log('dispatch getUserInfo error =>>', error);
+          } finally {
+            next({ replace: true });
           }
-          next({ ...to, replace: true });
         } else {
           next();
         }
