@@ -89,25 +89,25 @@ export default {
 
   .no-redirect {
     cursor: text;
-    color: $color-text-base
+    color: $breadcrumb-color-text-base
   }
 
   .el-breadcrumb__inner,
   .el-breadcrumb__inner a,
   .el-breadcrumb__inner.is-link {
-    color: $color-text-base;
+    color: $breadcrumb-color-text-base;
     font-weight: 400;
   }
 
   .el-breadcrumb__inner a,
   .el-breadcrumb__inner.is-link {
     &:hover {
-      color: $color-text-tap;
+      color: $breadcrumb-color-text-tap;
     }
   }
 
   .el-breadcrumb__item:last-child span {
-    color: $color-text-last;
+    color: $breadcrumb-color-text-last;
   }
 }
 
