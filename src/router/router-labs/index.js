@@ -4,7 +4,7 @@ export default [
   // labs
   {
     path: '/labs',
-    name: 'labs',
+    name: 'Labs',
     component: Layout,
     redirect: '/labs/index',
     meta: {
@@ -14,7 +14,7 @@ export default [
     children: [
       {
         path: 'card',
-        name: 'labsCard',
+        name: 'LabsCard',
         component: () => import('@/views/labs/card'),
         meta: {
           title: '卡片',
@@ -24,7 +24,7 @@ export default [
       },
       {
         path: 'filter',
-        name: 'labsFilter',
+        name: 'LabsFilter',
         component: () => import('@/views/labs/filter'),
         meta: {
           title: '全局过滤器',
@@ -32,15 +32,23 @@ export default [
       },
       {
         path: 'flex',
-        name: 'labsFlex',
+        name: 'LabsFlex',
         component: () => import('@/views/labs/flex'),
         meta: {
           title: '弹性布局',
         },
       },
       {
+        path: 'precision',
+        name: 'LabsPrecision',
+        component: () => import('@/views/labs/precision'),
+        meta: {
+          title: 'Precision 小数精准度',
+        },
+      },
+      {
         path: 'tabs-page',
-        name: 'labsTabsPage',
+        name: 'LabsTabsPage',
         component: () => import('@/views/labs/tabs-page'),
         meta: {
           title: '标签页',
@@ -53,7 +61,7 @@ export default [
   // list
   {
     path: '/list',
-    name: 'list',
+    name: 'List',
     component: Layout,
     redirect: '/list/table-list',
     meta: {
@@ -62,7 +70,7 @@ export default [
     children: [
       {
         path: 'table-list',
-        name: 'listTable',
+        name: 'ListTable',
         component: () => import('@/views/list/table-list'),
         meta: {
           icon: 'list',
@@ -75,7 +83,7 @@ export default [
   // component
   {
     path: '/components',
-    name: 'components',
+    name: 'Components',
     component: Layout,
     redirect: '/components/status',
     meta: {
@@ -85,7 +93,7 @@ export default [
     children: [
       {
         path: 'status',
-        name: 'componentsStatus',
+        name: 'ComponentsStatus',
         component: () => import('@/views/components-demo/status.vue'),
         meta: {
           title: '状态标签',
@@ -93,7 +101,7 @@ export default [
       },
       {
         path: 'sticky',
-        name: 'componentsSticky',
+        name: 'ComponentsSticky',
         component: () => import('@/views/components-demo/sticky.vue'),
         meta: {
           title: '滚动吸附',
@@ -101,7 +109,7 @@ export default [
       },
       {
         path: 'count-to',
-        name: 'componentsCountTo',
+        name: 'ComponentsCountTo',
         component: () => import('@/views/components-demo/count-to.vue'),
         meta: {
           title: '计数效果',
