@@ -72,6 +72,7 @@ export default {
 .app-layout-body {
   flex: auto;
   min-height: 0;
+  position: relative;
 
   a {
     color: $color-link;
