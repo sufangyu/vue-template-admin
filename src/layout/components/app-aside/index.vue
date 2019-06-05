@@ -1,8 +1,5 @@
 <template>
-  <aside
-    class="app-layout-sider"
-    :class="{ 'min': !sidebar.opened }"
-  >
+  <aside class="app-layout-sider">
     <div class="app-layout-sider-inner">
       <section class="logo">
         <router-link :to="{path: '/'}">
@@ -49,6 +46,7 @@ export default {
   computed: {
     ...mapGetters([
       'sidebar',
+      'screenSize',
       'menus',
     ]),
     variables() {
@@ -65,7 +63,6 @@ export default {
     },
     isCollapse() {
       return !this.sidebar.opened;
-      // return false;
     },
   },
   mounted() {
@@ -74,12 +71,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .app-layout {
 
   &-sider {
     width: $app-sider-width;
-    background: $app-sider-menu-fill;
     transition: all .2s;
     position: relative;
     z-index: 2010;
@@ -91,14 +87,22 @@ export default {
     left: 0;
     min-height: 100vh;
 
-    &.min {
-      width: $app-sider-width-min;
+    &-mask {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,.65);
+      transition: opacity .3s linear;
+      z-index: 2010;
     }
 
     &-inner {
-      // display: flex;
-      // flex-direction: column;
-      // overflow-y: auto;
+      background: $app-sider-menu-fill;
+      position: relative;
+    }
+
+    &.hide {
+      width: $app-sider-width-min;
     }
 
     .logo {

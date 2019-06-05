@@ -264,16 +264,8 @@ export default {
         position: fixed;
         top: 0;
         right: 0;
-        // left: $app-sider-width;
-        width: calc(100% - #{$app-sider-width});
       }
     }
-    &.min {
-      .app-layout-header-inner {
-        width: calc(100% - #{$app-sider-width-min});
-      }
-    }
-
   }
 }
 </style>
