@@ -152,6 +152,7 @@
             type="selection"
             width="55"
             align="center"
+            :selectable='handleSelectable'
           >
           </el-table-column>
 
@@ -389,6 +390,13 @@ export default {
       } finally {
         this.loading = false;
       }
+    },
+    handleSelectable(row, index) {
+      if (index % 2 === 0) {
+        return true;
+      }
+
+      return false;
     },
     /**
      * search
