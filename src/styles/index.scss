@@ -406,6 +406,11 @@ code {
 /* 列表提示信息 */
 .list-alert {
   margin-bottom: 16px;
+  
+  .el-alert {
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+  }
 
   &-content {
     font-size: 13px;
