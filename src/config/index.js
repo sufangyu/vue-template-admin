@@ -25,6 +25,10 @@ export const LANGUAGES = [
 export const HAS_MOCK = true;
 
 
+// 内容区域的 page header 显示内容默认配置
+export const PAGE_HEADER = ['breadcrumb', 'pageInfo'];
+
+
 // 首页路由配置
 export const HOME_ROUTE = {
   path: '/dashboard',

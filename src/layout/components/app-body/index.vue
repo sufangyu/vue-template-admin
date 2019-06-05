@@ -19,8 +19,7 @@
 <script>
 import Breadcrumb from '@/components/breadcrumb';
 import PageInfo from '@/components/page-info';
-
-const PAGE_HEADER = ['breadcrumb', 'pageInfo'];
+import { PAGE_HEADER } from '@/config';
 
 export default {
   name: 'AppBody',
