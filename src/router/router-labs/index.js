@@ -55,6 +55,14 @@ export default [
           pageHeader: ['breadcrumb'],
         },
       },
+      {
+        path: 'dialog',
+        name: 'LabsDialog',
+        component: () => import('@/views/labs/dialog.vue'),
+        meta: {
+          title: '弹窗尺寸',
+        },
+      },
     ],
   },
 

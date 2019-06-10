@@ -200,29 +200,34 @@ code {
 /* dialog */
 .dialog-full {
   .el-dialog {
+    width: 90%;
     max-width: 860px;
   }
 
   &-large {
     .el-dialog {
+      width: 90%;
       max-width: 1200px;
     }
   }
 
   &-medium {
     .el-dialog {
+      width: 90%;
       max-width: 860px;
     }
   }
 
   &-small {
     .el-dialog {
+      width: 90%;
       max-width: 640px;
     }
   }
 
   &-min {
     .el-dialog {
+      width: 90%;
       max-width: 320px;
     }
   }
