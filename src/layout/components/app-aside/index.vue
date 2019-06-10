@@ -78,7 +78,7 @@ export default {
     width: $app-sider-width;
     transition: all .2s;
     position: relative;
-    z-index: 2010;
+    z-index: 201;
     min-height: 100vh;
     box-shadow: 2px 0 6px rgba(0,21,41,.35);
     color: #fff;
