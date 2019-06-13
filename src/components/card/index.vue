@@ -42,12 +42,12 @@ export default {
       type: Boolean,
       default: false,
     },
-    // 是否启用底部编剧
+    // 是否启用底部边距
     bottom: {
       type: Boolean,
       default: false,
     },
-    // 是否不显示标题边线
+    // 是否隐藏标题边线
     borderDisabled: {
       type: Boolean,
       default: false,

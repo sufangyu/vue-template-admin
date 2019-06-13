@@ -87,12 +87,13 @@ npm run analyz
 │  │  ├─color.scss          # 颜色变量
 │  │  ├─import.scss         # 对外导出入口
 │  │  ├─index.scss          # 样式入口文件
+│  │  ├─public.scss         # 公共样式库
 │  │  └─normalize.css       # 样式初始化
 │  ├─utils                  # 工具库. 建议按模块组织, 例如 number.js, array.js, validate.js 等
 │  │  ├─auth.js             # 登录工具类
 │  │  ├─number.js           # 数字拓展函数
-│  │  └─request-helper.js   # 请求函数辅助函数
-│  │  └─request.js          # 请求函数
+│  │  ├─request-helper.js   # 请求函数辅助函数
+│  │  ├─request.js          # 请求函数
 │  │  ├─validator-rules.js  # 业务校验规则
 │  │  ├─validator.js        # 自定义校验规则函数
 │  │  └─index.js            # 常用工具类
