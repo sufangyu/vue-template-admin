@@ -66,12 +66,13 @@
       <a title="privacy" target="_self" href="">隐私</a>
       <a title="terms" target="_self" href="">条款</a>
     </div>
-    <div class="footer-copyright">Copyright © 2019 技术体验部出品</div>
+    <div class="footer-copyright">{{ copyright }}</div>
   </div>
 </div>
 </template>
 
 <script>
+import { COPYRIGHT } from '@/config';
 import Flex from '@/components/flex';
 import { validateMin } from '@/utils/validate-rules';
 
@@ -82,6 +83,7 @@ export default {
   },
   data() {
     return {
+      copyright: COPYRIGHT,
       rules: {
         username: [
           { required: true, message: '用户名不能为空', trigger: 'blur' },

@@ -65,17 +65,20 @@
       <a title="privacy" target="_self" href="">隐私</a>
       <a title="terms" target="_self" href="">条款</a>
     </div>
-    <div class="footer-copyright">Copyright © 2019 技术部出品</div>
+    <div class="footer-copyright">{{ copyright }}</div>
   </div>
 </div>
 </template>
 
 <script>
+import { COPYRIGHT } from '@/config';
+
 export default {
   name: 'Register',
   components: {},
   data() {
     return {
+      copyright: COPYRIGHT,
       form: {
         username: '',
         password: '',

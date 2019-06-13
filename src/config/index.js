@@ -25,6 +25,10 @@ export const LANGUAGES = [
 export const HAS_MOCK = true;
 
 
+// 版权信息
+export const COPYRIGHT = 'Copyright © 2019 技术体验部出品';
+
+
 // 内容区域的 page header 显示内容默认配置
 export const PAGE_HEADER = ['breadcrumb', 'pageInfo'];
 

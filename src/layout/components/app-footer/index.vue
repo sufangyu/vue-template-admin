@@ -1,14 +1,21 @@
 <template>
   <footer class="app-layout-footer">
     <section class="app-layout-footer-global">
-      <div class="footer-copyright">Copyright © 2019 技术体验部出品</div>
+      <div class="footer-copyright">{{ copyright }}</div>
     </section>
   </footer>
 </template>
 
 <script>
+import { COPYRIGHT } from '@/config';
+
 export default {
   name: 'AppFooter',
+  data() {
+    return {
+      copyright: COPYRIGHT,
+    };
+  },
 };
 </script>
 
