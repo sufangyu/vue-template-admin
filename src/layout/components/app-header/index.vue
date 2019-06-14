@@ -44,8 +44,12 @@
               <icon-svg name="language" />
             </div>
             <el-dropdown-menu slot="dropdown" placement="bottom-end">
-              <el-dropdown-item v-for="item in languages" :key="item.lang">
-                <span @click="handleSetLang(item.lang)">{{item.name}}</span>
+              <el-dropdown-item
+                v-for="item in languages"
+                :key="item.lang"
+                @click.native="handleSetLang(item.lang)"
+              >
+                <span>{{item.name}}</span>
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -85,8 +89,8 @@
               <el-dropdown-item disabled>
                 <router-link to="/">{{ '账户设置' }}</router-link>
               </el-dropdown-item>
-              <el-dropdown-item divided>
-                <a @click="handleLogout" href="javascript:;">{{ '退出登录' }}</a>
+              <el-dropdown-item divided @click.native="handleLogout">
+                <a href="javascript:;">{{ '退出登录' }}</a>
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -228,6 +232,7 @@ export default {
         &-inner {
           display: flex;
           align-items: center;
+          height: 100%;
         }
       }
 
