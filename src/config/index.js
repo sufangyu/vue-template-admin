@@ -25,6 +25,10 @@ export const LANGUAGES = [
 export const HAS_MOCK = true;
 
 
+// 菜单来源的模式. network: 服务的返回; router: 本地路由
+export const MENU_MODE = 'network';
+
+
 // 版权信息
 export const COPYRIGHT = 'Copyright © 2019 技术体验部出品';
 
