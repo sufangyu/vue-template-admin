@@ -88,6 +88,8 @@ const request = (defaults = {}) => {
         const { status, statusText } = error.response;
         // 登录过期
         if (status === 401) {
+          // 关闭所有 Message 实例
+          Message.closeAll();
           Message({
             type: 'error',
             message: error.message,
