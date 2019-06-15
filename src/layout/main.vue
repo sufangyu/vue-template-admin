@@ -34,11 +34,11 @@ export default {
   },
   mixins: [ResizeMixin],
   computed: {
-    ...mapGetters([
-      'sidebar',
-      'device',
-      'screenSize',
-    ]),
+    ...mapGetters({
+      sidebar: 'app/sidebar',
+      device: 'app/device',
+      screenSize: 'app/screenSize',
+    }),
     layoutClassName() {
       const { screenSize, sidebar } = this.$store.state.app;
       return {
@@ -49,14 +49,9 @@ export default {
       };
     },
   },
-  watch: {
-    sidebar(val) {
-      console.log('xxx =>>', val);
-    },
-  },
   methods: {
     handleClickOutside() {
-      this.$store.dispatch('closeSideBar', { withoutAnimation: false });
+      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false });
     },
   },
 };
@@ -65,7 +60,9 @@ export default {
 <style lang="scss">
 body {
   &.sidebar-show {
-    overflow: hidden; position: relative; width: calc(100% - 17px);
+    overflow: hidden;
+    position: relative;
+    width: calc(100% - 17px);
   }
 }
 .app-layout {

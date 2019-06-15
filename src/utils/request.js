@@ -94,7 +94,7 @@ const request = (defaults = {}) => {
             type: 'error',
             message: error.message,
           });
-          await store.dispatch('logout');
+          await store.dispatch('account/logout');
           // redirect to login
           router.replace('/login');
           return Promise.reject(error);

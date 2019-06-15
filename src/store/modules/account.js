@@ -3,6 +3,7 @@ import { getToken, setToken, removeToken } from '@/utils/auth';
 import { loginByUsername, getUserInfo } from '@/api/account';
 
 const user = {
+  namespaced: true,
   state: {
     account: null,
     token: getToken() || '',

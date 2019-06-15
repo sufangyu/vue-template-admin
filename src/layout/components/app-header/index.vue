@@ -123,14 +123,14 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
-      'sidebar',
-      'account',
-    ]),
+    ...mapGetters({
+      sidebar: 'app/sidebar',
+      account: 'account/account',
+    }),
   },
   methods: {
     handleToggleSideBar() {
-      this.$store.dispatch('toggleSidebar');
+      this.$store.dispatch('app/toggleSidebar');
     },
     /**
      * 设置 语言
@@ -144,7 +144,7 @@ export default {
      * 退出登录
      */
     async handleLogout() {
-      await this.$store.dispatch('logout');
+      await this.$store.dispatch('account/logout');
       // redirect to login
       this.$router.replace('/login');
     },

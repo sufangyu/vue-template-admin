@@ -44,11 +44,11 @@ export default {
     SidebarItem,
   },
   computed: {
-    ...mapGetters([
-      'sidebar',
-      'screenSize',
-      'menus',
-    ]),
+    ...mapGetters({
+      sidebar: 'app/sidebar',
+      screenSize: 'app/screenSize',
+      menus: 'menu/menus',
+    }),
     variables() {
       return variables;
     },
@@ -66,7 +66,7 @@ export default {
     },
   },
   mounted() {
-    this.$store.dispatch('getMenus');
+    this.$store.dispatch('menu/getMenus');
   },
 };
 </script>

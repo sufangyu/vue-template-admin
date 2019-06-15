@@ -5,6 +5,7 @@ import { INIT_MENUS, MENU_MODE } from '@/config';
 import { routerAsyncMap } from '@/router';
 
 const menu = {
+  namespaced: true,
   state: {
     menus: INIT_MENUS,
   },

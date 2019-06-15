@@ -23,7 +23,7 @@ router.beforeEach(async (to, from, next) => {
         if (!store.getters.account) {
           // get user info
           try {
-            await store.dispatch('getUserInfo');
+            await store.dispatch('account/getUserInfo');
           } catch (error) {
             console.log('dispatch getUserInfo error =>>', error);
           } finally {

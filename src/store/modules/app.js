@@ -11,6 +11,7 @@ const toggleBodyClassName = (state) => {
 };
 
 const app = {
+  namespaced: true,
   state: {
     sidebar: {
       opened: !+Cookies.get(SIDEBAR_IS_CLOSED_KEY),

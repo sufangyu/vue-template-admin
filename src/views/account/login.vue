@@ -108,7 +108,7 @@ export default {
           this.loading = true;
           try {
             const data = { ...this.form };
-            const res = await this.$store.dispatch('loginByUsername', data);
+            const res = await this.$store.dispatch('account/loginByUsername', data);
             if (!res.success) {
               this.$message.error(res.message || '登录失败，请重试');
             } else {
