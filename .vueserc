@@ -1,0 +1,10 @@
+{
+  "include": ["./src/components/**/*.vue", "./src/views/components/**/*.vue"],
+  "exclude": ["**/error.vue"],
+  "genType": "markdown",
+  "markdownDir": "*",
+  "markdownFile": "README",
+  "babelParserPlugins": {
+    "jsx": true
+  }
+}
