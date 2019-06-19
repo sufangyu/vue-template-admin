@@ -7,10 +7,13 @@
 <script>
 import screenfull from 'screenfull';
 
+/**
+ * 全屏控制
+ */
 export default {
   name: 'Fullscreen',
   props: {
-    // unusable message
+    // 不可用提示信息
     unusableMsg: {
       type: String,
       default: 'you browser can not work',

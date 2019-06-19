@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Flexbox',
+  name: 'FlexItem',
 };
 </script>
 

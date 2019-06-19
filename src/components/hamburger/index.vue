@@ -15,9 +15,13 @@
 </template>
 
 <script>
+/**
+ * 汉堡类型菜单控制
+ */
 export default {
   name: 'Hamburger',
   props: {
+    // 是否显示
     isActived: {
       type: Boolean,
       default: false,
@@ -25,6 +29,7 @@ export default {
   },
   methods: {
     toggleClick() {
+      // 点击状态切换
       this.$emit('toggleClick');
     },
   },

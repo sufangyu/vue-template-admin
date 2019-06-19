@@ -5,9 +5,13 @@
 </template>
 
 <script>
+/**
+ * SVG Icon 图标
+ */
 export default {
   name: 'IconSvg',
   props: {
+    // 图标名称. 对应 svg 文件名称
     name: {
       type: String,
       required: true,

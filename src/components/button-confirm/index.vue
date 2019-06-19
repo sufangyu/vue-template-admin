@@ -25,7 +25,9 @@
       </div>
     </slot>
 
+    <!-- 按钮区域 -->
     <slot name="button">
+      <!-- `<el-button>删除</el-button>` -->
       <el-button
         slot="reference"
         v-bind="$attrs"
@@ -37,29 +39,38 @@
 </template>
 
 <script>
+/**
+ * 二次确认 Popover 弹出框
+ */
 export default {
   name: 'ButtonConfirm',
   props: {
+    // 是否显示
     visible: {
       type: Boolean,
       default: false,
     },
+    // 标题
     title: {
       type: String,
       default: '提示',
     },
+    // 详细描述
     description: {
       type: String,
       default: '确认要删除该条数据 ?',
     },
+    // 按钮文案
     buttonLabel: {
       type: String,
       default: '删除',
     },
+    // 按钮尺寸
     buttonSize: {
       type: String,
       default: 'mini',
     },
+    // 按钮类型
     buttonType: {
       type: String,
       default: 'danger',
@@ -71,6 +82,7 @@ export default {
         return this.visible;
       },
       set(val) {
+        // 更新是否显示状态
         this.$emit('update:visible', val);
       },
     },
@@ -78,10 +90,12 @@ export default {
   methods: {
     handleCancel() {
       this.hideSelf();
+      // 取消回调函数
       this.$emit('cancel');
     },
     handleConfirm() {
       this.hideSelf();
+      // 确认回调函数
       this.$emit('confirm');
     },
     hideSelf() {

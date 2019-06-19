@@ -8,10 +8,14 @@
 </template>
 
 <script>
-// 两翼留白的间距，可选sm, md, lg
+/**
+ * 两翼留白的间距
+ */
 export default {
   name: 'WingBlank',
   props: {
+    // 间距大小.
+    // 取值: `sm`, `md`, `lg`
     size: {
       type: String,
       default: 'lg',

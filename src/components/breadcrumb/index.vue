@@ -21,6 +21,9 @@
 import pathToRegexp from 'path-to-regexp';
 import { HOME_ROUTE } from '@/config';
 
+/**
+ * 面包屑
+ */
 export default {
   name: 'Breadcrumb',
   data() {

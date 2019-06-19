@@ -1,4 +1,7 @@
 <script>
+/**
+ * 状态组件
+ */
 export default {
   name: 'Status',
   props: {

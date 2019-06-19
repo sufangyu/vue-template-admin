@@ -3,36 +3,51 @@
     v-bind="$attrs"
     :class="classNames"
   >
+    <!-- 头部区域 -->
     <template slot="header" v-if="title || this.$slots.title">
       <div class="title">
+        <!-- 标题区域 -->
         <slot name="title">
+          <!-- `<h3>标题</h3>` -->
           <h3>{{ title }}</h3>
         </slot>
       </div>
 
       <div class="subtitle" v-if="title || this.$slots.subtitle">
+        <!-- 副标题区域 -->
         <slot name="subtitle">
+          <!-- `<span>副标题</span>` -->
           <span>{{ subtitle }}</span>
         </slot>
       </div>
 
       <div class="extra">
-        <slot name="extra"></slot>
+        <!-- 额外区域 -->
+        <slot name="extra">
+          <!-- '' -->
+        </slot>
       </div>
     </template>
 
-    <slot></slot>
+    <slot>
+      <!-- '' -->
+    </slot>
   </el-card>
 </template>
 
 <script>
+/**
+ * 卡片
+ */
 export default {
   name: 'Card',
   props: {
+    // 标题
     title: {
       type: String,
       default: '',
     },
+    // 副标题
     subtitle: {
       type: String,
       default: '',

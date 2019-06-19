@@ -2,11 +2,14 @@
   <div class="page-info" v-if="titleScoped || descScoped || extraScoped">
     <h1 class="title" v-if="titleScoped">{{ titleScoped }}</h1>
     <div class="desc" v-if="descScoped">
+      <!-- 描述区域 -->
       <slot name="desc">
+        <!-- `<p>描述内容</p>` -->
         <p>{{ descScoped }}</p>
       </slot>
     </div>
     <div class="extra" v-if="extraScoped">
+      <!-- 额外区域 -->
       <slot name="extra">
         {{ extraScoped }}
       </slot>
@@ -15,17 +18,23 @@
 </template>
 
 <script>
+/**
+ * 页面信息
+ */
 export default {
   name: 'PageInfo',
   props: {
+    // 页面标题
     title: {
       type: String,
       default: '',
     },
+    // 页面描述
     desc: {
       type: String,
       default: '',
     },
+    // 额外内容
     extra: {
       type: String,
       default: '',

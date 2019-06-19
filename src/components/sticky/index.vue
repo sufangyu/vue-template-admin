@@ -16,6 +16,10 @@
 </template>
 
 <script>
+/**
+ * 滚动吸附组件.
+ * 当滚动到一定能位置, 固定指定内容再顶部
+ */
 export default {
   name: 'Sticky',
   props: {
@@ -28,10 +32,12 @@ export default {
       type: Number,
       default: 0,
     },
+    // 层级关系. 对应 z-index 样式
     zIndex: {
       type: Number,
       default: 1,
     },
+    // 自定义类名
     className: {
       type: String,
     },

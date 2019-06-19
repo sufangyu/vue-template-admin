@@ -8,28 +8,35 @@
 </template>
 
 <script>
+/**
+ * Flex 弹性布局
+ */
 export default {
   name: 'Flex',
   props: {
-    // 定位方向
+    // 定位方向.
+    // `row`, `row-reverse`, `column`, `column-reverse`
     direction: {
       type: String,
       default: 'row',
       validator: value => ['row', 'row-reverse', 'column', 'column-reverse'].indexOf(value) !== -1,
     },
-    // 子元素换行
+    // 子元素换行.
+    // `nowrap`, `wrap`, `wrap-reverse`
     wrap: {
       type: String,
       default: 'nowrap',
       validator: value => ['nowrap', 'wrap', 'wrap-reverse'].indexOf(value) !== -1,
     },
-    // 主轴对齐方式
+    // 主轴对齐方式.
+    // `start`, `end`, `center`, `between`, `around`
     justify: {
       type: String,
       default: 'start',
       validator: value => ['start', 'end', 'center', 'between', 'around'].indexOf(value) !== -1,
     },
-    // 交叉轴对齐方式
+    // 交叉轴对齐方式.
+    // `start`, `end`, `center`, `baseline`, `stretch`
     align: {
       type: String,
       default: 'center',

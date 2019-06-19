@@ -1,13 +1,19 @@
 <template>
   <div class="exception">
     <div class="exception-image" v-if="image">
-      <slot name="image"><img :src="image" alt="title" /></slot>
+      <!-- 图片区域 -->
+      <slot name="image">
+        <!-- `<img src="image" />` -->
+        <img :src="image" :alt="title" />
+      </slot>
     </div>
     <h1 class="exception-title" v-if="title">{{title}}</h1>
     <div class="exception-description" v-if="description">
+      <!-- 描述区域 -->
       <slot name="description">{{description}}</slot>
     </div>
     <div class="exception-actions">
+      <!-- 动作按钮区域 -->
       <slot name="actions">
         <button class="exception-button" @click="goback" v-if="hasGoback || gobackShow">上一页</button>
         <button class="exception-button exception-button--primary">
@@ -19,6 +25,9 @@
 </template>
 
 <script>
+/**
+ * 异常内容展示
+ */
 export default {
   name: 'Exception',
   props: {
@@ -76,7 +85,7 @@ export default {
       max-width: 100%;
     }
   }
-  
+
   &-title {
     font-weight: 400;
     font-size: 42px;
@@ -89,7 +98,7 @@ export default {
     font-size: 20px;
     opacity: 0.6;
   }
-  
+
   &-actions {
     margin-top: 35px;
 
@@ -121,7 +130,7 @@ export default {
       border-color: #c6e2ff;
       background-color: #ecf5ff;
     }
-    
+
     &:active {
       color: #3a8ee6;
       border-color: #3a8ee6;
@@ -143,11 +152,11 @@ export default {
       &:active {
         outline: none;
       }
-        
+
     }
-    
+
   }
-    
+
   &-button:not(:last-child) {
     margin-right: 10px;
   }

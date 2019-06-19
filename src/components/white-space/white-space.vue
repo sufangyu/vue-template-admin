@@ -6,10 +6,14 @@
 </template>
 
 <script>
-// 上下留白的间距，可选xs, sm, md, lg, xl
+/**
+ * 上下留白的间距
+ */
 export default {
   name: 'WhiteSpace',
   props: {
+    // 间距大小.
+    // 取值: `xs`, `sm`, `md`, `lg`, `xl`
     size: {
       type: String,
       default: 'md',
