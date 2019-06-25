@@ -123,6 +123,15 @@ export default [
           title: '计数效果',
         },
       },
+      {
+        path: 'viewer',
+        name: 'ComponentsViewer',
+        component: () => import('@/views/components-demo/viewer.vue'),
+        meta: {
+          title: '弹窗查看大图',
+          desc: '基于viewer.js的vue灯箱',
+        },
+      },
     ],
   },
 ];
