@@ -103,7 +103,6 @@ export default {
           url: 'https://fengyuanchen.github.io/viewerjs/images/tibet-3.jpg',
           thumbs: 'https://fengyuanchen.github.io/viewerjs/images/thumbnails/tibet-3.jpg',
         },
-        },
         {
           url: 'https://fengyuanchen.github.io/viewerjs/images/tibet-7.jpg',
           thumbs: 'https://fengyuanchen.github.io/viewerjs/images/thumbnails/tibet-7.jpg',
