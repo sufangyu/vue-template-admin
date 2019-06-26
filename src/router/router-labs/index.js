@@ -134,4 +134,26 @@ export default [
       },
     ],
   },
+
+  // excel
+  {
+    path: '/excel',
+    name: 'Excel',
+    component: Layout,
+    redirect: '/excel/export-excel',
+    meta: {
+      title: 'Excel',
+      icon: 'excel',
+    },
+    children: [
+      {
+        path: 'export-excel',
+        name: 'ExcelExport',
+        component: () => import('@/views/excel/export-excel.vue'),
+        meta: {
+          title: '导出 Excel',
+        },
+      },
+    ],
+  },
 ];
