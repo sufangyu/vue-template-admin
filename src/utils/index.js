@@ -179,3 +179,20 @@ export function formatPhoneHide(phone) {
 export function formatBank(val) {
   return val.toString().replace(/\s/g, '').replace(/(.{4})/g, '$1 ');
 }
+
+
+/**
+ * 格式化 code
+ *
+ * @export
+ * @param {*} code 编号值
+ * @param {*} maps 映射的对象
+ * @returns
+ */
+export function formatMaps(code, maps = {}) {
+  if (code === undefined || code === null) {
+    return '-';
+  }
+
+  return maps[code] || code;
+}
