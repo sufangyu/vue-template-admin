@@ -164,6 +164,7 @@ export default [
       },
     ],
   },
+
   // zip
   {
     path: '/zip',
@@ -186,12 +187,13 @@ export default [
       },
     ],
   },
+
   // pdf
   {
     path: '/pdf',
     name: 'Pdf',
     component: Layout,
-    redirect: '/pdf/download',
+    redirect: '/pdf/index',
     meta: {
       title: 'PDF',
       icon: 'pdf',
@@ -212,5 +214,28 @@ export default [
     path: '/pdf/download',
     component: () => import('@/views/pdf/download'),
     hidden: true,
+  },
+
+  // 打印
+  {
+    path: '/print',
+    name: 'Print',
+    component: Layout,
+    redirect: '/print/index',
+    alwaysShow: true,
+    meta: {
+      title: '打印',
+      icon: 'print',
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'PrintIndex',
+        component: () => import('@/views/print/index.vue'),
+        meta: {
+          title: '文字打印',
+        },
+      },
+    ],
   },
 ];
