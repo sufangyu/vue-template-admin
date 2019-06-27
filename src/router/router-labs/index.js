@@ -154,6 +154,14 @@ export default [
           title: '导出 Excel',
         },
       },
+      {
+        path: 'export-select-excel',
+        name: 'ExcelSelectExport',
+        component: () => import('@/views/excel/export-select-excel.vue'),
+        meta: {
+          title: '导出已选择项',
+        },
+      },
     ],
   },
 ];
