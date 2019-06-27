@@ -167,9 +167,10 @@ export default [
   // zip
   {
     path: '/zip',
-    name: 'zip',
+    name: 'Zip',
     component: Layout,
     redirect: '/zip/export',
+    alwaysShow: true, // will always show the root menu
     meta: {
       title: 'Zip',
       icon: 'zip',
@@ -184,5 +185,32 @@ export default [
         },
       },
     ],
+  },
+  // pdf
+  {
+    path: '/pdf',
+    name: 'Pdf',
+    component: Layout,
+    redirect: '/pdf/download',
+    meta: {
+      title: 'PDF',
+      icon: 'pdf',
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'PDFIndex',
+        component: () => import('@/views/pdf/index.vue'),
+        meta: {
+          title: 'PDF',
+          breadcrumb: false,
+        },
+      },
+    ],
+  },
+  {
+    path: '/pdf/download',
+    component: () => import('@/views/pdf/download'),
+    hidden: true,
   },
 ];
