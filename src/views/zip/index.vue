@@ -1,5 +1,5 @@
 <template>
-  <div class="excel-demo">
+  <div class="zip-demo">
     <card
       title="导出设置"
       bottom
