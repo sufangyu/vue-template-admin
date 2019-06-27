@@ -164,4 +164,25 @@ export default [
       },
     ],
   },
+  // zip
+  {
+    path: '/zip',
+    name: 'zip',
+    component: Layout,
+    redirect: '/zip/export',
+    meta: {
+      title: 'Zip',
+      icon: 'zip',
+    },
+    children: [
+      {
+        path: 'export',
+        name: 'ZipExport',
+        component: () => import('@/views/zip/index.vue'),
+        meta: {
+          title: '导出 Zip',
+        },
+      },
+    ],
+  },
 ];
