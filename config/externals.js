@@ -10,4 +10,6 @@ module.exports = {
   nprogress: 'NProgress',
   'element-ui': 'ELEMENT',
   screenfull: 'screenfull',
+  viewerjs: 'Viewer',
+  xlsx: 'xlsx',
 };
