@@ -5,6 +5,7 @@
         v-for="(item, index) in list"
         :key="index"
         class="print-item"
+        :class="{'print-item-qr-code': item.qrCode}"
       >
         <h2 class="item-title">{{ item.name }}</h2>
         <div class="item-description">{{ item.desc }}</div>
@@ -18,6 +19,11 @@
           <span>收藏：{{ item.statistics.collection }}</span>
           <span>点赞：{{ item.statistics.link }}</span>
           <span>评论：{{ item.statistics.commit }}</span>
+        </div>
+
+        <div class="item-qr-code" v-if="item.qrCode">
+          <img :src="item.qrCode" >
+          <p>扫码查看</p>
         </div>
       </article>
     </div>
@@ -40,6 +46,27 @@
         padding: 15px;
         max-width: 980px;
         margin: 0 auto;
+        position: relative;
+      }
+      .print-item-qr-code {
+        padding-right: 150px;
+      }
+      .item-qr-code {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 120px;
+        height: 120px;
+        text-align: center;
+      }
+      .item-qr-code img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .item-qr-code p {
+        margin-top: 15px;
+        font-size: 12px;
       }
       .item-title {
         margin-bottom: 20px;
@@ -57,6 +84,7 @@
         border-radius: 100%;
         vertical-align: middle;
         margin-right: 5px;
+        background-color: rgba(0, 0, 0, 0.1);
       }
       .item-published .item-created {
         margin-left: 25px;

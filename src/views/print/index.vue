@@ -13,6 +13,14 @@
           type="primary"
         >批量打印</el-button>
 
+        <el-button
+          :disabled="selectionCount === 0"
+          @click="handlePrintQR('batch')"
+          size="small"
+          icon="el-icon-takeaway-box"
+          type="success"
+        >批量打印二维码</el-button>
+
         <el-dropdown placement="bottom">
           <el-button size="small" :disabled="selectionCount === 0">
             更多操作
@@ -93,7 +101,7 @@
 
           <el-table-column
             label="操作"
-            width="70"
+            width="180"
             align="center"
           >
             <template slot-scope="scope">
@@ -102,6 +110,11 @@
                 type="primary"
                 @click="handlePrint('one', scope.row)"
               >打印</el-button>
+              <el-button
+                size="mini"
+                type="success"
+                @click="handlePrintQR('one', scope.row)"
+              >打印二维码</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -116,6 +129,13 @@
             icon="el-icon-takeaway-box"
             type="primary"
           >批量打印</el-button>
+          <el-button
+            :disabled="selectionCount === 0"
+            @click="handlePrintQR('batch')"
+            size="small"
+            icon="el-icon-takeaway-box"
+            type="success"
+          >批量打印二维码</el-button>
         </div>
         <div class="list-footer-right">
           <pagination
@@ -138,6 +158,7 @@
 </template>
 
 <script>
+import QRCode from 'qrcode';
 import PrintText from './components/print-text';
 
 // 模拟请求放回数据
@@ -299,7 +320,10 @@ export default {
     this.getList();
   },
   mounted() {},
-  destroyed() {},
+  destroyed() {
+    this.cleatTimeout(this.timer);
+    this.timer = null;
+  },
   methods: {
     /**
      * 获取列表
@@ -349,10 +373,10 @@ export default {
     /**
      * 打印
      */
-    handlePrint(type, item = {}) {
+    handlePrint(type, printObj = {}) {
       let printList = [];
       if (type === 'one') {
-        printList.push(item);
+        printList.push(printObj);
       } else {
         printList = [...this.multipleSelection];
       }
@@ -362,6 +386,36 @@ export default {
       this.$nextTick(() => {
         // 调用打印组件的打印方法
         this.$refs.printText.print();
+      });
+    },
+    /**
+     * 打印二维码
+     */
+    handlePrintQR(type, printObj = {}) {
+      let printList = [];
+      this.printList = [];
+      if (type === 'one') {
+        printList.push(printObj);
+      } else {
+        printList = [...this.multipleSelection];
+      }
+
+      printList.forEach(async (item, index) => {
+        const text = `${item.published}?id=${item.id}&name=${item.name}&author=${item.author}`;
+        const qrCodeImage = await QRCode.toDataURL(text, { margin: 2 });
+        item.qrCode = qrCodeImage;
+        this.printList.push(item);
+
+        // 处理完二维码
+        if (index >= printList.length - 1) {
+          this.$nextTick(() => {
+            clearTimeout(this.timer);
+            // 调用打印组件的打印方法
+            this.timer = setTimeout(() => {
+              this.$refs.printText.print();
+            }, 10);
+          });
+        }
       });
     },
     // 设置 pagination size
