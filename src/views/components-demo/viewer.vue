@@ -77,13 +77,12 @@
 </template>
 
 <script>
-import Viewer from 'viewerjs';
-import 'viewerjs/dist/viewer.css';
+import viewerMixins from '@/mixins/viewer';
 
 export default {
+  mixins: [viewerMixins],
   data() {
     return {
-      viewer: {},
       images: [
         'https://fengyuanchen.github.io/viewerjs/images/tibet-1.jpg',
         'https://fengyuanchen.github.io/viewerjs/images/tibet-2.jpg',
@@ -112,13 +111,6 @@ export default {
       limit2: 2,
     };
   },
-  destroyed() {
-    // 销毁
-    Object.values(this.viewer).forEach((viewer) => {
-      viewer.destroy();
-    });
-    this.viewer = {};
-  },
   methods: {
     handlePreview(refName) {
       this.previewImage(refName);
@@ -127,20 +119,6 @@ export default {
       this.previewImage(refName, {
         url: 'data-original',
       });
-    },
-    previewImage(refName, options = {}) {
-      if (!refName) {
-        console.warn('Miss ref name!');
-        return;
-      }
-
-      if (!this.viewer[refName]) {
-        const viewerRef = this.$refs[refName];
-        const config = Object.assign({}, options, {
-          title: false,
-        });
-        this.viewer[refName] = new Viewer(viewerRef, config);
-      }
     },
   },
 };
