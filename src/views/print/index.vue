@@ -321,7 +321,7 @@ export default {
   },
   mounted() {},
   destroyed() {
-    this.cleatTimeout(this.timer);
+    clearTimeout(this.timer);
     this.timer = null;
   },
   methods: {
