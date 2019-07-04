@@ -6,12 +6,24 @@
       borderDisabled
       bottom
     >
-      <ul class="galley-fixed" ref="viewer-1">
+      <ul
+        class="galley-fixed"
+        ref="viewer-1"
+        v-viewer="{
+          title: false,
+        }"
+      >
         <li
           v-for="(image, index) in images"
           :key="index"
         >
-          <img :src="image" @click="handlePreview('viewer-1')" />
+          <!-- <img :src="image" @click="handlePreview('viewer-1', index)" /> -->
+          <el-image
+            @click="handlePreview('viewer-1', index)"
+            style="width: 100%; height: 100%"
+            :src="image"
+            fit="cover"
+          ></el-image>
         </li>
       </ul>
     </card>
@@ -22,12 +34,23 @@
       borderDisabled
       bottom
     >
-      <ul class="galley-fixed" ref="viewer-2">
+      <ul
+        class="galley-fixed"
+        ref="viewer-2"
+        v-viewer="{
+          title: false,
+          url: 'data-original',
+        }"
+      >
         <li
           v-for="(image, index) in images2"
           :key="index"
         >
-          <img :data-original="image.url" :src="image.thumbs" @click="handlePreview2('viewer-2')" />
+          <img
+            :data-original="image.url"
+            :src="image.thumbs"
+            @click="handlePreview('viewer-2', index)"
+          />
         </li>
       </ul>
     </card>
@@ -38,7 +61,14 @@
       borderDisabled
       bottom
     >
-      <ul class="galley-fixed" ref="viewer-3">
+       <ul
+        class="galley-fixed"
+        ref="viewer-3"
+        v-viewer="{
+          title: false,
+          url: 'data-original',
+        }"
+      >
         <li
           v-for="(image, index) in images2"
           :key="index"
@@ -49,13 +79,20 @@
           <img
             :data-original="image.url"
             :src="image.thumbs"
-            @click="handlePreview2('viewer-3')"
+            @click="handlePreview('viewer-3', index)"
           />
           <!-- 剩余图片数量 -->
           <span v-if="index === limit - 1">{{ images2.length - limit }}</span>
         </li>
       </ul>
-      <ul class="galley-fixed" ref="viewer-4">
+      <ul
+        class="galley-fixed"
+        ref="viewer-4"
+        v-viewer="{
+          title: false,
+          url: 'data-original',
+        }"
+      >
         <li
           v-for="(image, index) in images2"
           :key="index"
@@ -66,7 +103,7 @@
           <img
             :data-original="image.url"
             :src="image.thumbs"
-            @click="handlePreview2('viewer-4')"
+            @click="handlePreview('viewer-4', index)"
           />
           <!-- 剩余图片数量 -->
           <span v-if="index === limit2 - 1">{{ images2.length - limit2 }}</span>
@@ -77,10 +114,7 @@
 </template>
 
 <script>
-import viewerMixins from '@/mixins/viewer';
-
 export default {
-  mixins: [viewerMixins],
   data() {
     return {
       images: [
@@ -112,13 +146,9 @@ export default {
     };
   },
   methods: {
-    handlePreview(refName) {
-      this.previewImage(refName);
-    },
-    handlePreview2(refName) {
-      this.previewImage(refName, {
-        url: 'data-original',
-      });
+    handlePreview(refName, index) {
+      const viewer = this.$refs[refName].$viewer;
+      viewer.view(index);
     },
   },
 };
