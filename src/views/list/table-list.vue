@@ -14,7 +14,7 @@
           label-width="70px"
           :model="query"
         >
-          <el-form-item label="关键词">
+          <el-form-item label="关键词" prop="value">
             <el-input
               class="input-with-select"
               placeholder="关键词"
@@ -35,7 +35,7 @@
             </el-input>
           </el-form-item>
 
-          <el-form-item label="帐号状态">
+          <el-form-item label="帐号状态" prop="status">
             <el-select
               placeholder="选择状态"
               v-model="query.status"
@@ -49,7 +49,7 @@
             </el-select>
           </el-form-item>
 
-          <el-form-item label="注册时间">
+          <el-form-item label="注册时间" prop="date">
             <el-date-picker
               v-model="query.date"
               type="daterange"
@@ -62,7 +62,7 @@
             ></el-date-picker>
           </el-form-item>
 
-          <el-form-item label="审批人">
+          <el-form-item label="审批人" prop="approver">
             <el-input
               placeholder="审批人"
               v-model="query.approver"
