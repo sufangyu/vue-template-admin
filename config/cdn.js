@@ -17,6 +17,7 @@ module.exports = {
     '//unpkg.com/element-ui@2.9.1/lib/index.js',
     '//cdn.bootcss.com/screenfull.js/4.2.0/screenfull.min.js',
     '//cdn.bootcss.com/viewerjs/1.3.3/viewer.min.js',
+    // '//unpkg.com/v-viewer@1.4.1/dist/v-viewer.js',
     '//cdn.bootcss.com/xlsx/0.14.3/xlsx.js',
   ],
 };

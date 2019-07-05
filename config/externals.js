@@ -11,5 +11,6 @@ module.exports = {
   'element-ui': 'ELEMENT',
   screenfull: 'screenfull',
   viewerjs: 'Viewer',
+  // 'v-viewer': 'VueViewer',
   xlsx: 'xlsx',
 };
