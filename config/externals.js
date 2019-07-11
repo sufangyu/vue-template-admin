@@ -12,5 +12,7 @@ module.exports = {
   screenfull: 'screenfull',
   viewerjs: 'Viewer',
   // 'v-viewer': 'VueViewer',
+  'v-charts': 'VeIndex',
+  echarts: 'Echarts',
   xlsx: 'xlsx',
 };

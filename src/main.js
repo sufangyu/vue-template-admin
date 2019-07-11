@@ -3,6 +3,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import Viewer from 'v-viewer';
 import 'viewerjs/dist/viewer.css';
+import VCharts from 'v-charts';
 
 import { HAS_MOCK } from './config';
 import App from './App';
@@ -40,6 +41,7 @@ if (process.env.NODE_ENV === 'development' && HAS_MOCK) {
 
 Vue.use(ElementUI);
 Vue.use(Viewer);
+Vue.use(VCharts);
 
 Vue.config.productionTip = false;
 
