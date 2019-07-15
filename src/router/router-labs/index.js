@@ -132,6 +132,15 @@ export default [
           desc: '基于viewer.js的vue灯箱',
         },
       },
+      {
+        path: 'input',
+        name: 'ComponentsInput',
+        component: () => import('@/views/components-demo/input.vue'),
+        meta: {
+          title: '输入框组件',
+          desc: '输入框的二次封装',
+        },
+      },
     ],
   },
 
