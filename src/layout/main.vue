@@ -141,6 +141,7 @@ body {
       .app-layout-sider {
         pointer-events: none;
         transform: translate3d(-$app-sider-width, 0, 0);
+        box-shadow: none;
       }
     }
   }

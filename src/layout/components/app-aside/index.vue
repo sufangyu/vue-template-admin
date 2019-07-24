@@ -93,7 +93,7 @@ export default {
       height: 100%;
       background-color: rgba(0,0,0,.65);
       transition: opacity .3s linear;
-      z-index: 2010;
+      z-index: 201;
     }
 
     &-inner {
@@ -124,7 +124,7 @@ export default {
         display: inline-block;
         margin: 0 0 0 12px;
         color: #fff;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 20px;
         vertical-align: middle;
       }
