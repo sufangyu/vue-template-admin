@@ -39,6 +39,14 @@ export default [
         },
       },
       {
+        path: 'validate',
+        name: 'LabsValidate',
+        component: () => import('@/views/labs/validate'),
+        meta: {
+          title: '表单验证',
+        },
+      },
+      {
         path: 'flex',
         name: 'LabsFlex',
         component: () => import('@/views/labs/flex'),
