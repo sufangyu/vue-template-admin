@@ -31,6 +31,14 @@ export default [
         },
       },
       {
+        path: 'directive',
+        name: 'LabsDirective',
+        component: () => import('@/views/labs/directive'),
+        meta: {
+          title: '全局指令',
+        },
+      },
+      {
         path: 'flex',
         name: 'LabsFlex',
         component: () => import('@/views/labs/flex'),
