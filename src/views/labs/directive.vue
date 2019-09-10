@@ -26,6 +26,24 @@
         v-number-only:2="numVal3"
         placeholder="最多可以输入两位小数"
       ></el-input>
+
+      <white-space></white-space>
+
+      <el-input
+        v-model="numVal4"
+        v-number-only:0:-1="numVal4"
+        data-negative
+        placeholder="可以输入负整数"
+      ></el-input>
+
+      <white-space></white-space>
+
+      <el-input
+        v-model="numVal5"
+        v-number-only:2:-1="numVal5"
+        data-negative
+        placeholder="可以输入负小数"
+      ></el-input>
     </card>
   </div>
 </template>
@@ -37,6 +55,8 @@ export default {
       numVal1: null,
       numVal2: null,
       numVal3: null,
+      numVal4: null,
+      numVal5: null,
     };
   },
 };
