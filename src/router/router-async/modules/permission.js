@@ -29,7 +29,6 @@ export default [
         meta: {
           title: '指令权限',
           desc: '指令权限: 不同权限的用户, 显示不同的菜单入口',
-          pageHeader: ['breadcrumb', 'pageInfo'],
           noCache: true,
           auth: true,
         },

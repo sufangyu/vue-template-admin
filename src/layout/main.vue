@@ -69,6 +69,12 @@ body {
   display: flex;
   flex-direction: row;
 
+  &.without-animation {
+    .app-layout-sider {
+      transition: none;
+    }
+  }
+
   &-main {
     flex: auto;
     display: flex;

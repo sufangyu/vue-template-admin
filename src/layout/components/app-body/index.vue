@@ -1,11 +1,5 @@
 <template>
   <main class="app-layout-body">
-    <!-- 面包屑 & 页面描述说明 -->
-    <section class="page-header" v-if="pageHeader.length > 0">
-      <breadcrumb v-if="pageHeader.includes('breadcrumb')" class="app-breadcrumb" />
-      <page-info v-if="pageHeader.includes('pageInfo')" />
-    </section>
-
     <section class="page-content">
       <transition name="fade-transform" mode="out-in">
         <keep-alive :include="cachedViews">
@@ -17,25 +11,21 @@
 </template>
 
 <script>
-import Breadcrumb from '@/components/breadcrumb';
-import PageInfo from '@/components/page-info';
-import { PAGE_HEADER } from '@/config';
+// import Breadcrumb from '@/components/breadcrumb';
+// import PageInfo from '@/components/page-info';
 
 export default {
   name: 'AppBody',
   components: {
-    Breadcrumb,
-    PageInfo,
+    // Breadcrumb,
+    // PageInfo,
   },
   data() {
-    return {
-      // 页面头部需要显示的内容
-      pageHeader: PAGE_HEADER,
-    };
+    return {};
   },
   computed: {
     cachedViews() {
-      return this.$store.state.tagsView ? this.$store.state.tagsView.cachedViews : [];
+      return this.$store.state['tags-view'] ? this.$store.state['tags-view'].cachedViews : [];
     },
     key() {
       return this.$route.path || +new Date();
@@ -43,26 +33,11 @@ export default {
   },
   watch: {
     $route() {
-      // 初始化赋值
-      this.pageHeader = PAGE_HEADER;
-      this.getRouteMeta();
     },
   },
   created() {
-    this.getRouteMeta();
   },
   methods: {
-    getRouteMeta() {
-      const matched = this.$route.matched.filter(item => item.name);
-      const last = matched[matched.length - 1].meta;
-
-      // 是否显示整个页面信息
-      if (last.pageHeader && last.pageHeader.constructor !== Array) {
-        console.warn(`${last.title}'s pageHeader config was't array`);
-      } else if (last.pageHeader !== undefined) {
-        this.pageHeader = last.pageHeader;
-      }
-    },
   },
 };
 </script>

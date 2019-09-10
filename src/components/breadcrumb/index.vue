@@ -6,7 +6,7 @@
       >
         <!-- no-redirect || last one -->
         <span
-          v-if="item.redirect === 'noRedirect' || index == levelList.length - 1"
+          v-if="item.redirect === 'noRedirect' || index === levelList.length - 1"
           class="no-redirect"
         >
           {{ item.meta.title }}
@@ -21,9 +21,6 @@
 import pathToRegexp from 'path-to-regexp';
 import { HOME_ROUTE } from '@/config';
 
-/**
- * 面包屑
- */
 export default {
   name: 'Breadcrumb',
   data() {
@@ -71,14 +68,19 @@ export default {
       return toPath(params);
     },
     handleLink(item) {
+      const currentPath = this.$route.path;
       const { redirect, path } = item;
+
+      if (redirect && redirect === currentPath) {
+        return;
+      }
+
       if (redirect) {
         this.$router.push(redirect);
         return;
       }
 
       const url = this.pathCompile(path);
-      console.log('handleLink', url);
       this.$router.push(url);
     },
   },

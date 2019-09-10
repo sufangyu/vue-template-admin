@@ -19,7 +19,6 @@
     desc: 'This is page description',
     noCache: true,
     auth: true,
-    pageHeader: ['breadcrumb', 'pageInfo'],
   }
 }
 ```
@@ -33,7 +32,6 @@
   - desc: 页面描述
   - noCache: 是否缓存页面. 默认: false
   - auth: 是否需要验证登录. 默认: false
-  - pageHeader: 页面要显示的信息. 默认['breadcrumb', 'pageInfo']
 
 ## 路由命名规范
 

@@ -97,12 +97,6 @@ const LANGUAGES = [
 
 底部版权信息配置.
 
-### PAGE_HEADER
-
-页面信息所展示内容, 默认值: `['breadcrumb', 'pageInfo']`.
-- breadcrumb 面包屑
-- pageInfo 页面信息. 包含标题和页面描述
-
 ### HOME_ROUTE
 
 首页路由信息. 默认值:

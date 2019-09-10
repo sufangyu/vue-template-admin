@@ -1,102 +1,111 @@
 <template>
   <header
     class="app-layout-header fixed"
-    :class="{ 'min': !sidebar.opened }"
+    :class="{
+      'app-layout-header-tags-view': showTagsView,
+    }"
   >
     <div class="app-layout-header-inner">
-      <div class="app-layout-header-left">
-        <hamburger
-          @toggleClick="handleToggleSideBar"
-          :is-actived="sidebar.opened"
-          class="hamburger-container"
-        />
-      </div>
+      <div class="app-layout-header-nav">
+        <div class="app-layout-header-nav-left">
+          <hamburger
+            @toggleClick="handleToggleSideBar"
+            :is-actived="sidebar.opened"
+            class="hamburger-container"
+          />
 
-      <div class="app-layout-header-right">
-        <el-tooltip
-          effect="dark"
-          content="使用文档"
-          placement="bottom"
-          class="hide-in-mobile"
-        >
-          <a href="https://www.github.com" target="_blank" class="action action-document">
-            <icon-svg name="help" />
-          </a>
-        </el-tooltip>
-
-        <el-tooltip
-          effect="dark"
-          content="全屏"
-          placement="bottom"
-        >
-          <span class="action action-fullscreen">
-            <fullscreen />
-          </span>
-        </el-tooltip>
-
-        <!-- 切换语言. 超过2种语言配置才显示 -->
-        <div
-          v-if="languages.length > 1"
-          class="action hide-in-mobile"
-        >
-          <el-dropdown trigger="hover" placement="top">
-            <div class="action-button">
-              <icon-svg name="language" />
-            </div>
-            <el-dropdown-menu slot="dropdown" placement="bottom-end">
-              <el-dropdown-item
-                v-for="item in languages"
-                :key="item.lang"
-                @click.native="handleSetLang(item.lang)"
-              >
-                <span>{{item.name}}</span>
-              </el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
+          <!-- 面包屑 -->
+          <breadcrumb class="app-breadcrumb hide-in-mobile" />
         </div>
 
-        <!-- 全局通知信息 -->
-        <div class="action">
-          <el-popover
+        <div class="app-layout-header-nav-right">
+          <el-tooltip
+            effect="dark"
+            content="使用文档"
             placement="bottom"
-            width="350"
-            trigger="click"
-            @show="handleMessagePopoverShow"
+            class="hide-in-mobile"
           >
-            <!-- message tabs -->
-            <messages ref="messages" @syncUnreadCount="handleSyncUnreadCount" />
-            <el-badge :hidden="unreadCount === 0" slot="reference" :value="unreadCount" :max="99">
-              <icon-svg name="bell" />
-            </el-badge>
-          </el-popover>
-        </div>
+            <a href="https://www.github.com" target="_blank" class="action action-document">
+              <icon-svg name="help" />
+            </a>
+          </el-tooltip>
 
-        <!-- 账户操作 -->
-        <div class="action">
-          <el-dropdown class="action-button" trigger="hover" placement="top">
-            <div class="action-button-inner">
-              <icon-svg v-if="!account || !account.avatar" name="user" />
-              <img class="avatar" v-if="account && account.avatar" :src="account.avatar" alt="">
-              <span class="name">{{ account ? (account.nickname || '---') : '---' }}</span>
-            </div>
-            <el-dropdown-menu slot="dropdown" placement="bottom-end">
-              <el-dropdown-item>
-                <router-link to="/accounts/edit">{{ '基本资料' }}</router-link>
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <router-link to="/accounts/password">{{ '修改密码' }}</router-link>
-              </el-dropdown-item>
-              <el-dropdown-item disabled>
-                <router-link to="/">{{ '账户设置' }}</router-link>
-              </el-dropdown-item>
-              <el-dropdown-item divided @click.native="handleLogout">
-                <a href="javascript:;">{{ '退出登录' }}</a>
-              </el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-        </div>
+          <el-tooltip
+            effect="dark"
+            content="全屏"
+            placement="bottom"
+          >
+            <span class="action action-fullscreen">
+              <fullscreen />
+            </span>
+          </el-tooltip>
 
+          <!-- 切换语言. 超过2种语言配置才显示 -->
+          <div
+            v-if="languages.length > 1"
+            class="action hide-in-mobile"
+          >
+            <el-dropdown trigger="hover" placement="top">
+              <div class="action-button">
+                <icon-svg name="language" />
+              </div>
+              <el-dropdown-menu slot="dropdown" placement="bottom-end">
+                <el-dropdown-item
+                  v-for="item in languages"
+                  :key="item.lang"
+                  @click.native="handleSetLang(item.lang)"
+                >
+                  <span>{{item.name}}</span>
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </div>
+
+          <!-- 全局通知信息 -->
+          <div class="action">
+            <el-popover
+              placement="bottom"
+              width="350"
+              trigger="click"
+              @show="handleMessagePopoverShow"
+            >
+              <!-- message tabs -->
+              <messages ref="messages" @syncUnreadCount="handleSyncUnreadCount" />
+              <el-badge :hidden="unreadCount === 0" slot="reference" :value="unreadCount" :max="99">
+                <icon-svg name="bell" />
+              </el-badge>
+            </el-popover>
+          </div>
+
+          <!-- 账户操作 -->
+          <div class="action">
+            <el-dropdown class="action-button" trigger="hover" placement="top">
+              <div class="action-button-inner">
+                <icon-svg v-if="!account || !account.avatar" name="user" />
+                <img class="avatar" v-if="account && account.avatar" :src="account.avatar" alt="">
+                <span class="name">{{ account ? (account.nickname || '---') : '---' }}</span>
+              </div>
+              <el-dropdown-menu slot="dropdown" placement="bottom-end">
+                <el-dropdown-item>
+                  <router-link to="/accounts/edit">{{ '基本资料' }}</router-link>
+                </el-dropdown-item>
+                <el-dropdown-item>
+                  <router-link to="/accounts/password">{{ '修改密码' }}</router-link>
+                </el-dropdown-item>
+                <el-dropdown-item disabled>
+                  <router-link to="/">{{ '账户设置' }}</router-link>
+                </el-dropdown-item>
+                <el-dropdown-item divided @click.native="handleLogout">
+                  <a href="javascript:;">{{ '退出登录' }}</a>
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </div>
+
+        </div>
       </div>
+
+      <tags-view v-if="showTagsView" />
     </div>
   </header>
 </template>
@@ -104,9 +113,11 @@
 <script>
 import { mapGetters } from 'vuex';
 import Hamburger from '@/components/hamburger';
+import Breadcrumb from '@/components/breadcrumb';
 import Fullscreen from '@/components/fullscreen';
+import { LANGUAGES, SHOW_TAGS_VIEW } from '@/config';
 import Messages from './messages/index';
-import { LANGUAGES } from '@/config';
+import TagsView from '../tags-view';
 
 
 export default {
@@ -115,11 +126,14 @@ export default {
     Hamburger,
     Fullscreen,
     Messages,
+    Breadcrumb,
+    TagsView,
   },
   data() {
     return {
       unreadCount: 0,
       languages: LANGUAGES,
+      showTagsView: SHOW_TAGS_VIEW,
     };
   },
   computed: {
@@ -177,6 +191,9 @@ export default {
     &-inner {
       position: relative;
       z-index: 200;
+    }
+
+    &-nav {
       height: $app-header-height;
       line-height: $app-header-height;
       background-color: $fill-base;
@@ -186,15 +203,15 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
 
-    &-right {
-      color: #808080;
-      display: flex;
-      align-items: center;
+      &-right {
+        color: #808080;
+        display: flex;
+        align-items: center;
 
-      a {
-        color: inherit;
+        a {
+          color: inherit;
+        }
       }
     }
 
@@ -204,10 +221,17 @@ export default {
       cursor: pointer;
       transition: background .3s;
       -webkit-tap-highlight-color:transparent;
+      float: left;
 
       &:hover {
         background: rgba(0, 0, 0, .025);
       }
+    }
+
+    .breadcrumb-container {
+      height: $app-header-height;
+      line-height: $app-header-height;
+      float: left;
     }
 
     .action {
@@ -230,9 +254,9 @@ export default {
         align-items: center;
 
         &-inner {
+          height: 100%;
           display: flex;
           align-items: center;
-          height: 100%;
         }
       }
 
@@ -269,8 +293,21 @@ export default {
         position: fixed;
         top: 0;
         right: 0;
+        // left: $app-sider-width;
+        width: calc(100% - #{$app-sider-width});
       }
     }
+    &.min {
+      .app-layout-header-inner {
+        width: calc(100% - #{$app-sider-width-min});
+      }
+    }
+
+  }
+
+  // 有 tags-view 的头部
+  &-header-tags-view {
+    height: $app-header-height + 34px;
   }
 }
 </style>

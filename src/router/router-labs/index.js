@@ -19,7 +19,6 @@ export default [
         meta: {
           title: '卡片',
           desc: '卡片内容展示组件',
-          // pageHeader: ['breadcrumb'],
         },
       },
       {
@@ -68,7 +67,6 @@ export default [
         component: () => import('@/views/labs/tabs-page'),
         meta: {
           title: '标签页',
-          pageHeader: ['breadcrumb'],
         },
       },
       {
