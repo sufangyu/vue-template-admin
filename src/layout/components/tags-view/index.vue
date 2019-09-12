@@ -150,7 +150,7 @@ export default {
     },
     // 刷新当前
     refreshSelectedTag(view) {
-      this.$store.dispatch('delCachedView', view).then(() => {
+      this.$store.dispatch('tags-view/delCachedView', view).then(() => {
         const { fullPath } = view;
         this.$nextTick(() => {
           this.$router.replace({
@@ -161,7 +161,7 @@ export default {
     },
     // 关闭当前
     closeSelectedTag(view) {
-      this.$store.dispatch('delView', view).then(({ visitedViews }) => {
+      this.$store.dispatch('tags-view/delView', view).then(({ visitedViews }) => {
         if (this.isActive(view)) {
           // 访问其他 tag
           this.toLastView(visitedViews, view);
@@ -171,13 +171,13 @@ export default {
     // 关闭其他
     closeOthersTags() {
       this.$router.push(this.selectedTag);
-      this.$store.dispatch('delOthersViews', this.selectedTag).then(() => {
+      this.$store.dispatch('tags-view/delOthersViews', this.selectedTag).then(() => {
         this.moveToCurrentTag();
       });
     },
     // 关闭所有
     closeAllTags(view) {
-      this.$store.dispatch('delAllViews').then(({ visitedViews }) => {
+      this.$store.dispatch('tags-view/delAllViews').then(({ visitedViews }) => {
         if (this.affixTags.some(tag => tag.path === view.path)) {
           return;
         }
