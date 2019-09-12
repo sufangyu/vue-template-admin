@@ -43,7 +43,7 @@ router.beforeEach(async (to, from, next) => {
     } else {
       // match router
       if (to.meta.auth) {
-        const redirectUrl = encodeURIComponent(to.path);
+        const redirectUrl = encodeURIComponent(to.fullPath);
         next({ path: `/login?redirect=${redirectUrl}`, replace: true });
         NProgress.done();
       } else {
