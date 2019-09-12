@@ -1,4 +1,5 @@
 const tagsView = {
+  namespaced: true,
   state: {
     visitedViews: [], // 用户访问过的页面
     cachedViews: [], // 实际 keep-alive 的路由。可配置路由的 meta.noCache 来设置是否需要缓存这个路由, 默认都缓存

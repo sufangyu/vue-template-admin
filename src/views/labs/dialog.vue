@@ -86,8 +86,12 @@
 </template>
 
 <script>
+import mixinSetTagsViewTitle from '@/mixins/set-tags-view-title';
+import { setTimeout } from 'timers';
+
 export default {
   name: 'labsDialog',
+  mixins: [mixinSetTagsViewTitle],
   data() {
     return {
       visible1: false,
@@ -96,6 +100,11 @@ export default {
       visible4: false,
       visible5: false,
     };
+  },
+  created() {
+    setTimeout(() => {
+      this.setTagsViewTitle('弹窗尺寸 - 自定义');
+    }, 1500);
   },
   methods: {
     handleShowDialog(keyName) {

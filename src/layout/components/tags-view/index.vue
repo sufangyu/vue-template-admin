@@ -121,14 +121,14 @@ export default {
       for (const tag of affixTags) {
         // Must have tag name
         if (tag.name) {
-          this.$store.dispatch('addVisitedView', tag);
+          this.$store.dispatch('tags-view/addVisitedView', tag);
         }
       }
     },
     addTags() {
       const { name } = this.$route;
       if (name) {
-        this.$store.dispatch('addView', this.$route);
+        this.$store.dispatch('tags-view/addView', this.$route);
       }
     },
     moveToCurrentTag() {
