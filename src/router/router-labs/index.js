@@ -77,6 +77,14 @@ export default [
           title: '弹窗尺寸',
         },
       },
+      {
+        path: 'iframe',
+        name: 'LabsIframe',
+        component: () => import('@/views/labs/iframe.vue'),
+        meta: {
+          title: '第三方网址',
+        },
+      },
     ],
   },
 

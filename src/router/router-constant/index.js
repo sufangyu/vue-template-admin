@@ -29,6 +29,15 @@ export default [
           affix: true,
         },
       },
+      {
+        path: 'iframe',
+        name: 'IframeExample',
+        component: () => import('@/views/iframe/index.vue'),
+        hidden: true,
+        meta: {
+          title: '网址',
+        },
+      },
     ],
   },
   {
