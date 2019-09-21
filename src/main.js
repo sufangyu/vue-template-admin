@@ -4,6 +4,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import Viewer from 'v-viewer';
 import 'viewerjs/dist/viewer.css';
 import VCharts from 'v-charts';
+import 'v-charts/lib/style.css';
 
 import { HAS_MOCK } from './config';
 import App from './App';
