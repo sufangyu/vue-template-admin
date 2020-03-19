@@ -12,7 +12,10 @@
         title="这里使用 window.print() 来实现下载pdf的功能"
       ></el-alert>
 
-      <router-link target="_blank" to="/pdf/download">
+      <router-link
+        target="_blank"
+        to="/pdf/download"
+      >
         <el-button type="primary">点击下载 PDF</el-button>
       </router-link>
     </card>

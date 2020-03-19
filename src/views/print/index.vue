@@ -22,7 +22,10 @@
         >批量打印二维码</el-button>
 
         <el-dropdown placement="bottom">
-          <el-button size="small" :disabled="selectionCount === 0">
+          <el-button
+            size="small"
+            :disabled="selectionCount === 0"
+          >
             更多操作
             <i class="el-icon-arrow-down el-icon--right"></i>
           </el-button>
@@ -41,9 +44,15 @@
           :closable="false"
           title=""
         >
-          <div class="list-alert-content" slot="title">
+          <div
+            class="list-alert-content"
+            slot="title"
+          >
             已选择<strong>{{selectionCount}}</strong>项
-            <span class="action-line" @click="toggleSelection()">清空</span>
+            <span
+              class="action-line"
+              @click="toggleSelection()"
+            >清空</span>
           </div>
         </el-alert>
       </div>

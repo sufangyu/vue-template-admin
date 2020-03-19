@@ -12,7 +12,10 @@
       </div>
 
       <div style="color: #ccc;">
-        当前文章摘录于<a target="_blank" href="https://juejin.im/post/5d0f64d4f265da1b67211893">掘金</a>
+        当前文章摘录于<a
+          target="_blank"
+          href="https://juejin.im/post/5d0f64d4f265da1b67211893"
+        >掘金</a>
       </div>
 
       <div

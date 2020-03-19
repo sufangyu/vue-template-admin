@@ -1,5 +1,8 @@
 <template>
-  <div class="app-layout" :class="layoutClassName">
+  <div
+    class="app-layout"
+    :class="layoutClassName"
+  >
     <div
       v-if="sidebar.opened && screenSize === 'screen-xs'"
       @click="handleClickOutside"

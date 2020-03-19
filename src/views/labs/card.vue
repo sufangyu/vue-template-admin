@@ -1,7 +1,13 @@
 <template>
   <div class="page-labs">
     <el-row :gutter="10">
-      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="24"
+        :lg="12"
+        :xl="12"
+      >
         <!-- 全配置 -->
         <card
           class="box-card"
@@ -24,7 +30,13 @@
           </div>
         </card>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="24"
+        :lg="12"
+        :xl="12"
+      >
         <card
           class="box-card"
           shadow="hover"
@@ -44,7 +56,13 @@
     </el-row>
 
     <el-row :gutter="10">
-      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="24"
+        :lg="12"
+        :xl="12"
+      >
         <!-- 全配置 -->
         <card
           class="box-card"
@@ -63,7 +81,13 @@
           </div>
         </card>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="24"
+        :lg="12"
+        :xl="12"
+      >
         <card
           class="box-card"
           shadow="hover"

@@ -61,7 +61,7 @@
       borderDisabled
       bottom
     >
-       <ul
+      <ul
         class="galley-fixed"
         ref="viewer-3"
         v-viewer="{

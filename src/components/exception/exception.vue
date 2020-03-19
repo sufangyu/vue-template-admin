@@ -1,23 +1,44 @@
 <template>
   <div class="exception">
-    <div class="exception-image" v-if="image">
+    <div
+      class="exception-image"
+      v-if="image"
+    >
       <!-- 图片区域 -->
       <slot name="image">
         <!-- `<img src="image" />` -->
-        <img :src="image" :alt="title" />
+        <img
+          :src="image"
+          :alt="title"
+        />
       </slot>
     </div>
-    <h1 class="exception-title" v-if="title">{{title}}</h1>
-    <div class="exception-description" v-if="description">
+    <h1
+      class="exception-title"
+      v-if="title"
+    >{{title}}</h1>
+    <div
+      class="exception-description"
+      v-if="description"
+    >
       <!-- 描述区域 -->
       <slot name="description">{{description}}</slot>
     </div>
     <div class="exception-actions">
       <!-- 动作按钮区域 -->
       <slot name="actions">
-        <button class="exception-button" @click="goback" v-if="hasGoback || gobackShow">上一页</button>
+        <button
+          class="exception-button"
+          @click="goback"
+          v-if="hasGoback || gobackShow"
+        >上一页</button>
         <button class="exception-button exception-button--primary">
-          <router-link :to="{path: '/'}" replace exact tag="span">返回首页</router-link>
+          <router-link
+            :to="{path: '/'}"
+            replace
+            exact
+            tag="span"
+          >返回首页</router-link>
         </button>
       </slot>
     </div>

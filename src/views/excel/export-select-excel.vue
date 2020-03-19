@@ -7,7 +7,13 @@
       shadow="hover"
     >
       <el-row :gutter="10">
-        <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
+        <el-col
+          :xs="24"
+          :sm="24"
+          :md="12"
+          :lg="6"
+          :xl="6"
+        >
           <div class="setting-item">
             <span class="setting-item-label">文件名称：</span>
             <div class="setting-item-content">
@@ -20,11 +26,20 @@
             </div>
           </div>
         </el-col>
-        <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
+        <el-col
+          :xs="24"
+          :sm="24"
+          :md="12"
+          :lg="6"
+          :xl="6"
+        >
           <div class="setting-item">
             <span class="setting-item-label">文件类型：</span>
             <div class="setting-item-content">
-              <el-select v-model="bookType" style="width:120px;">
+              <el-select
+                v-model="bookType"
+                style="width:120px;"
+              >
                 <el-option
                   v-for="item in options"
                   :key="item"
@@ -35,18 +50,39 @@
             </div>
           </div>
         </el-col>
-        <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
+        <el-col
+          :xs="24"
+          :sm="24"
+          :md="12"
+          :lg="6"
+          :xl="6"
+        >
           <div class="setting-item">
             <span class="setting-item-label">自动宽度：</span>
             <div class="setting-item-content">
-              <el-radio-group v-model="autoWidth" size="small">
-                <el-radio :label="true" border>是</el-radio>
-                <el-radio :label="false" border>否</el-radio>
+              <el-radio-group
+                v-model="autoWidth"
+                size="small"
+              >
+                <el-radio
+                  :label="true"
+                  border
+                >是</el-radio>
+                <el-radio
+                  :label="false"
+                  border
+                >否</el-radio>
               </el-radio-group>
             </div>
           </div>
         </el-col>
-        <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
+        <el-col
+          :xs="24"
+          :sm="24"
+          :md="12"
+          :lg="6"
+          :xl="6"
+        >
           <div class="setting-item">
             <div class="setting-item-content">
               <el-button

@@ -5,20 +5,41 @@
     class="message-list-item"
   >
     <slot>
-      <div class="message-list-item-image" v-if="data.image">
-        <img :src="data.image" alt>
+      <div
+        class="message-list-item-image"
+        v-if="data.image"
+      >
+        <img
+          :src="data.image"
+          alt
+        >
       </div>
       <div class="message-list-item-content">
-        <div class="title" v-if="data.title">
+        <div
+          class="title"
+          v-if="data.title"
+        >
           <h4>{{ data.title }}</h4>
-          <div class="extra" v-if="data.status">
+          <div
+            class="extra"
+            v-if="data.status"
+          >
             <slot name="extra">
-              <el-tag size="mini" :type="data.type">{{ data.status }}</el-tag>
+              <el-tag
+                size="mini"
+                :type="data.type"
+              >{{ data.status }}</el-tag>
             </slot>
           </div>
         </div>
-        <div class="description" v-if="data.description">{{ data.description }}</div>
-        <div class="meta" v-if="data.meta">{{ data.meta }}</div>
+        <div
+          class="description"
+          v-if="data.description"
+        >{{ data.description }}</div>
+        <div
+          class="meta"
+          v-if="data.meta"
+        >{{ data.meta }}</div>
       </div>
     </slot>
   </div>

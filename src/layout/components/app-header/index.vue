@@ -25,7 +25,11 @@
             placement="bottom"
             class="hide-in-mobile"
           >
-            <a href="https://www.github.com" target="_blank" class="action action-document">
+            <a
+              href="https://www.github.com"
+              target="_blank"
+              class="action action-document"
+            >
               <icon-svg name="help" />
             </a>
           </el-tooltip>
@@ -45,11 +49,17 @@
             v-if="languages.length > 1"
             class="action hide-in-mobile"
           >
-            <el-dropdown trigger="hover" placement="top">
+            <el-dropdown
+              trigger="hover"
+              placement="top"
+            >
               <div class="action-button">
                 <icon-svg name="language" />
               </div>
-              <el-dropdown-menu slot="dropdown" placement="bottom-end">
+              <el-dropdown-menu
+                slot="dropdown"
+                placement="bottom-end"
+              >
                 <el-dropdown-item
                   v-for="item in languages"
                   :key="item.lang"
@@ -70,8 +80,16 @@
               @show="handleMessagePopoverShow"
             >
               <!-- message tabs -->
-              <messages ref="messages" @syncUnreadCount="handleSyncUnreadCount" />
-              <el-badge :hidden="unreadCount === 0" slot="reference" :value="unreadCount" :max="99">
+              <messages
+                ref="messages"
+                @syncUnreadCount="handleSyncUnreadCount"
+              />
+              <el-badge
+                :hidden="unreadCount === 0"
+                slot="reference"
+                :value="unreadCount"
+                :max="99"
+              >
                 <icon-svg name="bell" />
               </el-badge>
             </el-popover>
@@ -79,13 +97,28 @@
 
           <!-- 账户操作 -->
           <div class="action">
-            <el-dropdown class="action-button" trigger="hover" placement="top">
+            <el-dropdown
+              class="action-button"
+              trigger="hover"
+              placement="top"
+            >
               <div class="action-button-inner">
-                <icon-svg v-if="!account || !account.avatar" name="user" />
-                <img class="avatar" v-if="account && account.avatar" :src="account.avatar" alt="">
+                <icon-svg
+                  v-if="!account || !account.avatar"
+                  name="user"
+                />
+                <img
+                  class="avatar"
+                  v-if="account && account.avatar"
+                  :src="account.avatar"
+                  alt=""
+                >
                 <span class="name">{{ account ? (account.nickname || '---') : '---' }}</span>
               </div>
-              <el-dropdown-menu slot="dropdown" placement="bottom-end">
+              <el-dropdown-menu
+                slot="dropdown"
+                placement="bottom-end"
+              >
                 <el-dropdown-item>
                   <router-link to="/accounts/edit">{{ '基本资料' }}</router-link>
                 </el-dropdown-item>
@@ -95,7 +128,10 @@
                 <el-dropdown-item disabled>
                   <router-link to="/">{{ '账户设置' }}</router-link>
                 </el-dropdown-item>
-                <el-dropdown-item divided @click.native="handleLogout">
+                <el-dropdown-item
+                  divided
+                  @click.native="handleLogout"
+                >
                   <a href="javascript:;">{{ '退出登录' }}</a>
                 </el-dropdown-item>
               </el-dropdown-menu>

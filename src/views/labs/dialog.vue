@@ -17,9 +17,15 @@
       :visible.sync="visible1"
     >
       <span>这是一段信息</span>
-      <span slot="footer" class="dialog-footer">
+      <span
+        slot="footer"
+        class="dialog-footer"
+      >
         <el-button @click="handleHideDialog('visible1')">取 消</el-button>
-        <el-button type="primary" @click="handleHideDialog('visible1')">确 定</el-button>
+        <el-button
+          type="primary"
+          @click="handleHideDialog('visible1')"
+        >确 定</el-button>
       </span>
     </el-dialog>
 
@@ -28,9 +34,15 @@
       :visible.sync="visible1"
     >
       <span>这是一段信息</span>
-      <span slot="footer" class="dialog-footer">
+      <span
+        slot="footer"
+        class="dialog-footer"
+      >
         <el-button @click="handleHideDialog('visible1')">取 消</el-button>
-        <el-button type="primary" @click="handleHideDialog('visible1')">确 定</el-button>
+        <el-button
+          type="primary"
+          @click="handleHideDialog('visible1')"
+        >确 定</el-button>
       </span>
     </el-dialog>
 
@@ -40,9 +52,15 @@
       class="dialog-full-large"
     >
       <span>这是一段信息</span>
-      <span slot="footer" class="dialog-footer">
+      <span
+        slot="footer"
+        class="dialog-footer"
+      >
         <el-button @click="handleHideDialog('visible2')">取 消</el-button>
-        <el-button type="primary" @click="handleHideDialog('visible2')">确 定</el-button>
+        <el-button
+          type="primary"
+          @click="handleHideDialog('visible2')"
+        >确 定</el-button>
       </span>
     </el-dialog>
 
@@ -52,9 +70,15 @@
       class="dialog-full-medium"
     >
       <span>这是一段信息</span>
-      <span slot="footer" class="dialog-footer">
+      <span
+        slot="footer"
+        class="dialog-footer"
+      >
         <el-button @click="handleHideDialog('visible3')">取 消</el-button>
-        <el-button type="primary" @click="handleHideDialog('visible3')">确 定</el-button>
+        <el-button
+          type="primary"
+          @click="handleHideDialog('visible3')"
+        >确 定</el-button>
       </span>
     </el-dialog>
 
@@ -64,9 +88,15 @@
       class="dialog-full-small"
     >
       <span>这是一段信息</span>
-      <span slot="footer" class="dialog-footer">
+      <span
+        slot="footer"
+        class="dialog-footer"
+      >
         <el-button @click="handleHideDialog('visible4')">取 消</el-button>
-        <el-button type="primary" @click="handleHideDialog('visible4')">确 定</el-button>
+        <el-button
+          type="primary"
+          @click="handleHideDialog('visible4')"
+        >确 定</el-button>
       </span>
     </el-dialog>
 
@@ -76,9 +106,15 @@
       class="dialog-full-min"
     >
       <span>这是一段信息</span>
-      <span slot="footer" class="dialog-footer">
+      <span
+        slot="footer"
+        class="dialog-footer"
+      >
         <el-button @click="handleHideDialog('visible5')">取 消</el-button>
-        <el-button type="primary" @click="handleHideDialog('visible5')">确 定</el-button>
+        <el-button
+          type="primary"
+          @click="handleHideDialog('visible5')"
+        >确 定</el-button>
       </span>
     </el-dialog>
 

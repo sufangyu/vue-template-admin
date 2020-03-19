@@ -107,41 +107,86 @@
       borderDisabled
     >
       <flex>
-        <place-holder class="inline" content="Block 1" />
-        <place-holder class="inline" content="Block 2" />
-        <place-holder class="inline" content="Block 3" />
+        <place-holder
+          class="inline"
+          content="Block 1"
+        />
+        <place-holder
+          class="inline"
+          content="Block 2"
+        />
+        <place-holder
+          class="inline"
+          content="Block 3"
+        />
       </flex>
 
       <white-space></white-space>
 
       <flex justify="end">
-        <place-holder class="inline" content="Block 1" />
-        <place-holder class="inline" content="Block 2" />
-        <place-holder class="inline" content="Block 3" />
+        <place-holder
+          class="inline"
+          content="Block 1"
+        />
+        <place-holder
+          class="inline"
+          content="Block 2"
+        />
+        <place-holder
+          class="inline"
+          content="Block 3"
+        />
       </flex>
 
       <white-space></white-space>
 
       <flex justify="center">
-        <place-holder class="inline" content="Block 1" />
-        <place-holder class="inline" content="Block 2" />
-        <place-holder class="inline" content="Block 3" />
+        <place-holder
+          class="inline"
+          content="Block 1"
+        />
+        <place-holder
+          class="inline"
+          content="Block 2"
+        />
+        <place-holder
+          class="inline"
+          content="Block 3"
+        />
       </flex>
 
       <white-space></white-space>
 
       <flex justify="between">
-        <place-holder class="inline" content="Block 1" />
-        <place-holder class="inline" content="Block 2" />
-        <place-holder class="inline" content="Block 3" />
+        <place-holder
+          class="inline"
+          content="Block 1"
+        />
+        <place-holder
+          class="inline"
+          content="Block 2"
+        />
+        <place-holder
+          class="inline"
+          content="Block 3"
+        />
       </flex>
 
       <white-space></white-space>
 
       <flex justify="around">
-        <place-holder class="inline" content="Block 1" />
-        <place-holder class="inline" content="Block 2" />
-        <place-holder class="inline" content="Block 3" />
+        <place-holder
+          class="inline"
+          content="Block 1"
+        />
+        <place-holder
+          class="inline"
+          content="Block 2"
+        />
+        <place-holder
+          class="inline"
+          content="Block 3"
+        />
       </flex>
     </card>
 
@@ -152,41 +197,86 @@
       borderDisabled
     >
       <flex align="start">
-        <place-holder class="inline" content="Block 1" />
-        <place-holder class="inline small" content="Block 2" />
-        <place-holder class="inline" content="Block 3" />
+        <place-holder
+          class="inline"
+          content="Block 1"
+        />
+        <place-holder
+          class="inline small"
+          content="Block 2"
+        />
+        <place-holder
+          class="inline"
+          content="Block 3"
+        />
       </flex>
 
       <white-space></white-space>
 
       <flex align="end">
-        <place-holder class="inline" content="Block 1" />
-        <place-holder class="inline small" content="Block 2" />
-        <place-holder class="inline" content="Block 3" />
+        <place-holder
+          class="inline"
+          content="Block 1"
+        />
+        <place-holder
+          class="inline small"
+          content="Block 2"
+        />
+        <place-holder
+          class="inline"
+          content="Block 3"
+        />
       </flex>
 
       <white-space></white-space>
 
       <flex align="center">
-        <place-holder class="inline" content="Block 1" />
-        <place-holder class="inline small" content="Block 2" />
-        <place-holder class="inline" content="Block 3" />
+        <place-holder
+          class="inline"
+          content="Block 1"
+        />
+        <place-holder
+          class="inline small"
+          content="Block 2"
+        />
+        <place-holder
+          class="inline"
+          content="Block 3"
+        />
       </flex>
 
       <white-space></white-space>
 
       <flex align="baseline">
-        <place-holder class="inline" content="Block 1" />
-        <place-holder class="inline small" content="Block 2" />
-        <place-holder class="inline" content="Block 3" />
+        <place-holder
+          class="inline"
+          content="Block 1"
+        />
+        <place-holder
+          class="inline small"
+          content="Block 2"
+        />
+        <place-holder
+          class="inline"
+          content="Block 3"
+        />
       </flex>
 
       <white-space></white-space>
 
       <flex align="stretch">
-        <place-holder class="inline" content="Block 1" />
-        <place-holder class="inline small" content="Block 2" />
-        <place-holder class="inline" content="Block 3" />
+        <place-holder
+          class="inline"
+          content="Block 1"
+        />
+        <place-holder
+          class="inline small"
+          content="Block 2"
+        />
+        <place-holder
+          class="inline"
+          content="Block 3"
+        />
       </flex>
     </card>
 

@@ -14,7 +14,10 @@
           label-width="70px"
           :model="query"
         >
-          <el-form-item label="关键词" prop="value">
+          <el-form-item
+            label="关键词"
+            prop="value"
+          >
             <el-input
               class="input-with-select"
               placeholder="关键词"
@@ -35,7 +38,10 @@
             </el-input>
           </el-form-item>
 
-          <el-form-item label="帐号状态" prop="status">
+          <el-form-item
+            label="帐号状态"
+            prop="status"
+          >
             <el-select
               placeholder="选择状态"
               v-model="query.status"
@@ -49,7 +55,10 @@
             </el-select>
           </el-form-item>
 
-          <el-form-item label="注册时间" prop="date">
+          <el-form-item
+            label="注册时间"
+            prop="date"
+          >
             <el-date-picker
               v-model="query.date"
               type="daterange"
@@ -62,7 +71,10 @@
             ></el-date-picker>
           </el-form-item>
 
-          <el-form-item label="审批人" prop="approver">
+          <el-form-item
+            label="审批人"
+            prop="approver"
+          >
             <el-input
               placeholder="审批人"
               v-model="query.approver"
@@ -99,7 +111,11 @@
 
       <!-- 操作项 -->
       <div class="list-operator">
-        <el-button size="small" icon="el-icon-plus" type="primary">立即创建</el-button>
+        <el-button
+          size="small"
+          icon="el-icon-plus"
+          type="primary"
+        >立即创建</el-button>
 
         <button-confirm
           :visible.sync="visibleDelMulti"
@@ -112,7 +128,10 @@
         />
 
         <el-dropdown placement="bottom">
-          <el-button size="small" :disabled="selectionCount === 0">
+          <el-button
+            size="small"
+            :disabled="selectionCount === 0"
+          >
             更多操作
             <i class="el-icon-arrow-down el-icon--right"></i>
           </el-button>
@@ -131,9 +150,15 @@
           :closable="false"
           title=""
         >
-          <div class="list-alert-content" slot="title">
+          <div
+            class="list-alert-content"
+            slot="title"
+          >
             已选择<strong>{{selectionCount}}</strong>项
-            <span class="action-line" @click="toggleSelection()">清空</span>
+            <span
+              class="action-line"
+              @click="toggleSelection()"
+            >清空</span>
           </div>
         </el-alert>
       </div>

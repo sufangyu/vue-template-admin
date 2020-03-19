@@ -1,8 +1,12 @@
 <template>
-  <el-breadcrumb class="breadcrumb-container" separator="/">
+  <el-breadcrumb
+    class="breadcrumb-container"
+    separator="/"
+  >
     <transition-group name="breadcrumb">
       <el-breadcrumb-item
-        v-for="(item, index) in levelList" :key="item.path"
+        v-for="(item, index) in levelList"
+        :key="item.path"
       >
         <!-- no-redirect || last one -->
         <span
@@ -11,7 +15,10 @@
         >
           {{ item.meta.title }}
         </span>
-        <a v-else @click.prevent="handleLink(item)">{{ item.meta.title }}</a>
+        <a
+          v-else
+          @click.prevent="handleLink(item)"
+        >{{ item.meta.title }}</a>
       </el-breadcrumb-item>
     </transition-group>
   </el-breadcrumb>

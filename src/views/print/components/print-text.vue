@@ -21,7 +21,10 @@
           <span>评论：{{ item.statistics.commit }}</span>
         </div>
 
-        <div class="item-qr-code" v-if="item.qrCode">
+        <div
+          class="item-qr-code"
+          v-if="item.qrCode"
+        >
           <img :src="item.qrCode" >
           <p>扫码查看</p>
         </div>

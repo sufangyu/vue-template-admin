@@ -3,7 +3,10 @@
     <div class="app-layout-sider-inner">
       <section class="logo">
         <router-link :to="{path: '/'}">
-          <img src="@/assets/logo.png" alt="">
+          <img
+            src="@/assets/logo.png"
+            alt=""
+          >
           <h1 v-if="sidebar.opened">Admin Template</h1>
         </router-link>
       </section>

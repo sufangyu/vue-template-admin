@@ -1,14 +1,26 @@
 <template>
-  <div class="page-info" v-if="titleScoped || descScoped || extraScoped">
-    <h1 class="title" v-if="titleScoped">{{ titleScoped }}</h1>
-    <div class="desc" v-if="descScoped">
+  <div
+    class="page-info"
+    v-if="titleScoped || descScoped || extraScoped"
+  >
+    <h1
+      class="title"
+      v-if="titleScoped"
+    >{{ titleScoped }}</h1>
+    <div
+      class="desc"
+      v-if="descScoped"
+    >
       <!-- 描述区域 -->
       <slot name="desc">
         <!-- `<p>描述内容</p>` -->
         <p>{{ descScoped }}</p>
       </slot>
     </div>
-    <div class="extra" v-if="extraScoped">
+    <div
+      class="extra"
+      v-if="extraScoped"
+    >
       <!-- 额外区域 -->
       <slot name="extra">
         {{ extraScoped }}

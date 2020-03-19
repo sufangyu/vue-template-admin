@@ -7,7 +7,13 @@
       shadow="hover"
     >
       <el-row :gutter="10">
-        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+        <el-col
+          :xs="24"
+          :sm="24"
+          :md="12"
+          :lg="12"
+          :xl="12"
+        >
           <div class="setting-item">
             <span class="setting-item-label">文件名称：</span>
             <div class="setting-item-content">
@@ -20,7 +26,13 @@
             </div>
           </div>
         </el-col>
-        <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+        <el-col
+          :xs="24"
+          :sm="24"
+          :md="12"
+          :lg="12"
+          :xl="12"
+        >
           <div class="setting-item">
             <div class="setting-item-content">
               <el-button

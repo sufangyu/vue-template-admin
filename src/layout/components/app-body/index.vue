@@ -1,7 +1,10 @@
 <template>
   <main class="app-layout-body">
     <section class="page-content">
-      <transition name="fade-transform" mode="out-in">
+      <transition
+        name="fade-transform"
+        mode="out-in"
+      >
         <keep-alive :include="cachedViews">
           <router-view :key="key" />
         </keep-alive>

@@ -1,11 +1,14 @@
 <template>
-  <div v-if="!item.hidden" class="menu-wrapper">
+  <div
+    v-if="!item.hidden"
+    class="menu-wrapper"
+  >
     <!-- eslint-disable max-len -->
     <template
       v-if="
         hasOneShowingChild(item.children, item) &&
-        (!onlyOneChild.children || onlyOneChild.noShowingChildren) &&
-        !item.alwaysShow
+          (!onlyOneChild.children || onlyOneChild.noShowingChildren) &&
+          !item.alwaysShow
       "
     >
       <app-link
@@ -31,7 +34,11 @@
       popper-append-to-body
     >
       <template slot="title">
-        <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
+        <item
+          v-if="item.meta"
+          :icon="item.meta && item.meta.icon"
+          :title="item.meta.title"
+        />
       </template>
       <sidebar-item
         v-for="child in item.children"

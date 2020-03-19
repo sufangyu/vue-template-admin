@@ -5,29 +5,65 @@
       shadow="hover"
       borderDisabled
     >
-      <div label-position="right" ref="ruleForm">
-        <div class="form-item" prop="val">
-          <label class="form-item-label" required>活动名称</label>
+      <div
+        label-position="right"
+        ref="ruleForm"
+      >
+        <div
+          class="form-item"
+          prop="val"
+        >
+          <label
+            class="form-item-label"
+            required
+          >活动名称</label>
           <div class="form-item-content">
-            <el-input v-model="ruleForm.val" placeholder="请输入活动名称"></el-input>
+            <el-input
+              v-model="ruleForm.val"
+              placeholder="请输入活动名称"
+            ></el-input>
           </div>
         </div>
         <white-space></white-space>
 
-        <div class="form-item" prop="mobile">
-          <label class="form-item-label" required>联系电话</label>
+        <div
+          class="form-item"
+          prop="mobile"
+        >
+          <label
+            class="form-item-label"
+            required
+          >联系电话</label>
           <div class="form-item-content">
-            <el-input v-model="ruleForm.mobile" placeholder="请输入联系电话"></el-input>
+            <el-input
+              v-model="ruleForm.mobile"
+              placeholder="请输入联系电话"
+            ></el-input>
           </div>
         </div>
         <white-space></white-space>
 
-        <div class="form-item" prop="region">
-          <label class="form-item-label" required>活动区域</label>
+        <div
+          class="form-item"
+          prop="region"
+        >
+          <label
+            class="form-item-label"
+            required
+          >活动区域</label>
           <div class="form-item-content">
-            <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
-              <el-option label="区域一" value="shanghai"></el-option>
-              <el-option label="区域二" value="beijing"></el-option>
+            <el-select
+              v-model="ruleForm.region"
+              placeholder="请选择活动区域"
+            >
+              <el-option
+                label="区域一"
+                value="shanghai"
+              ></el-option>
+              <el-option
+                label="区域二"
+                value="beijing"
+              ></el-option>
             </el-select>
           </div>
         </div>
@@ -41,20 +77,38 @@
         </div>
         <white-space></white-space>
 
-        <div class="form-item" prop="type">
+        <div
+          class="form-item"
+          prop="type"
+        >
           <label class="form-item-label">活动性质</label>
           <div class="form-item-content">
             <el-checkbox-group v-model="ruleForm.type">
-              <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-              <el-checkbox label="地推活动" name="type"></el-checkbox>
-              <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-              <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
+              <el-checkbox
+                label="美食/餐厅线上活动"
+                name="type"
+              ></el-checkbox>
+              <el-checkbox
+                label="地推活动"
+                name="type"
+              ></el-checkbox>
+              <el-checkbox
+                label="线下主题活动"
+                name="type"
+              ></el-checkbox>
+              <el-checkbox
+                label="单纯品牌曝光"
+                name="type"
+              ></el-checkbox>
             </el-checkbox-group>
           </div>
         </div>
         <white-space></white-space>
 
-        <div class="form-item" prop="resource">
+        <div
+          class="form-item"
+          prop="resource"
+        >
           <label class="form-item-label">特殊资源</label>
           <div class="form-item-content">
             <el-radio-group v-model="ruleForm.resource">
@@ -65,17 +119,26 @@
         </div>
         <white-space></white-space>
 
-        <div class="form-item" prop="desc">
+        <div
+          class="form-item"
+          prop="desc"
+        >
           <label class="form-item-label">活动形式</label>
           <div class="form-item-content">
-            <el-input type="textarea" v-model="ruleForm.desc"></el-input>
+            <el-input
+              type="textarea"
+              v-model="ruleForm.desc"
+            ></el-input>
           </div>
         </div>
         <white-space></white-space>
 
         <div class="form-item">
           <div class="form-item-content">
-            <el-button type="primary" @click="submitForm('ruleForm', 'validate')">立即创建</el-button>
+            <el-button
+              type="primary"
+              @click="submitForm('ruleForm', 'validate')"
+            >立即创建</el-button>
           </div>
         </div>
       </div>

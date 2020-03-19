@@ -1,6 +1,12 @@
 <template>
-  <div class="tabs-message" v-loading="loading">
-    <el-tabs :stretch="true" v-model="activeName">
+  <div
+    class="tabs-message"
+    v-loading="loading"
+  >
+    <el-tabs
+      :stretch="true"
+      v-model="activeName"
+    >
       <el-tab-pane
         v-for="(item, i) in messages"
         :key="`message-panel-${i}`"
@@ -22,7 +28,10 @@
           </div>
         </template>
 
-        <div v-else class="message-list-empty">
+        <div
+          v-else
+          class="message-list-empty"
+        >
           <icon-svg name="message-empty"></icon-svg>
           <div>暂时没有{{ item.label }} ~</div>
         </div>

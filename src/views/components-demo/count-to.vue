@@ -1,7 +1,13 @@
 <template>
   <div class="count-to">
     <el-row :gutter="10">
-      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="12"
+        :lg="12"
+        :xl="12"
+      >
         <card
           shadow="hover"
           borderDisabled
@@ -16,14 +22,23 @@
             :duration="4000"
           />
           <div class="count-to-actions">
-            <el-button type="primary" @click="handleStart1">开始</el-button>
+            <el-button
+              type="primary"
+              @click="handleStart1"
+            >开始</el-button>
             <el-button @click="handleChangeEndVal">改变结束值</el-button>
             <el-button @click="handleIncrementalUpdate">增量更新</el-button>
           </div>
         </card>
       </el-col>
 
-      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="12"
+        :lg="12"
+        :xl="12"
+      >
         <card
           shadow="hover"
           borderDisabled
@@ -38,7 +53,10 @@
             :duration="4000"
           ></count-to>
           <div class="count-to-actions">
-            <el-button type="primary" @click="handleStart2">开始</el-button>
+            <el-button
+              type="primary"
+              @click="handleStart2"
+            >开始</el-button>
           </div>
         </card>
       </el-col>
@@ -65,52 +83,124 @@
       </count-to>
       <div class="count-to-custom">
         <el-row :gutter="20">
-          <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+          <el-col
+            :xs="24"
+            :sm="12"
+            :md="6"
+            :lg="6"
+            :xl="6"
+          >
             <div class="flex flex-align-center">
               <label>开始数值：</label>
-              <el-input class="flex-1" v-model.number="setStartVal"></el-input>
+              <el-input
+                class="flex-1"
+                v-model.number="setStartVal"
+              ></el-input>
             </div>
           </el-col>
-          <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+          <el-col
+            :xs="24"
+            :sm="12"
+            :md="6"
+            :lg="6"
+            :xl="6"
+          >
             <div class="flex flex-align-center">
               <label>结束数值：</label>
-              <el-input class="flex-1" v-model.number="setEndVal"></el-input>
+              <el-input
+                class="flex-1"
+                v-model.number="setEndVal"
+              ></el-input>
             </div>
           </el-col>
-          <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+          <el-col
+            :xs="24"
+            :sm="12"
+            :md="6"
+            :lg="6"
+            :xl="6"
+          >
             <div class="flex flex-align-center">
               <label>持续时间：</label>
-              <el-input class="flex-1" v-model.number="setDuration"></el-input>
+              <el-input
+                class="flex-1"
+                v-model.number="setDuration"
+              ></el-input>
             </div>
           </el-col>
-          <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+          <el-col
+            :xs="24"
+            :sm="12"
+            :md="6"
+            :lg="6"
+            :xl="6"
+          >
             <div class="flex flex-align-center">
               <label>小数个位：</label>
-              <el-input class="flex-1" v-model.number="setDecimals"></el-input>
+              <el-input
+                class="flex-1"
+                v-model.number="setDecimals"
+              ></el-input>
             </div>
           </el-col>
 
-          <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+          <el-col
+            :xs="24"
+            :sm="12"
+            :md="6"
+            :lg="6"
+            :xl="6"
+          >
             <div class="flex flex-align-center">
               <label>分割符号：</label>
-              <el-input class="flex-1" v-model="setSeparator"></el-input>
+              <el-input
+                class="flex-1"
+                v-model="setSeparator"
+              ></el-input>
             </div>
           </el-col>
-          <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+          <el-col
+            :xs="24"
+            :sm="12"
+            :md="6"
+            :lg="6"
+            :xl="6"
+          >
             <div class="flex flex-align-center">
               <label>前置符号：</label>
-              <el-input class="flex-1" v-model="setPrefix"></el-input>
+              <el-input
+                class="flex-1"
+                v-model="setPrefix"
+              ></el-input>
             </div>
           </el-col>
-          <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+          <el-col
+            :xs="24"
+            :sm="12"
+            :md="6"
+            :lg="6"
+            :xl="6"
+          >
             <div class="flex flex-align-center">
               <label>后置符号：</label>
-              <el-input class="flex-1" v-model="setSuffix"></el-input>
+              <el-input
+                class="flex-1"
+                v-model="setSuffix"
+              ></el-input>
             </div>
           </el-col>
-          <el-col :xs="24" :sm="12" :md="6" :lg="6" :xl="6">
+          <el-col
+            :xs="24"
+            :sm="12"
+            :md="6"
+            :lg="6"
+            :xl="6"
+          >
             <div class="flex flex-align-center">
-              <el-button type="primary" @click='handleStart3'>开始</el-button>
+              <el-button
+                type="primary"
+                @click='handleStart3'
+              >开始</el-button>
               <el-button @click='handlePauseResume'>暂停/恢复</el-button>
             </div>
           </el-col>

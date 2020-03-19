@@ -4,7 +4,10 @@
     :class="classNames"
   >
     <!-- 头部区域 -->
-    <template slot="header" v-if="title || this.$slots.title">
+    <template
+      slot="header"
+      v-if="title || this.$slots.title"
+    >
       <div class="title">
         <!-- 标题区域 -->
         <slot name="title">
@@ -13,7 +16,10 @@
         </slot>
       </div>
 
-      <div class="subtitle" v-if="title || this.$slots.subtitle">
+      <div
+        class="subtitle"
+        v-if="title || this.$slots.subtitle"
+      >
         <!-- 副标题区域 -->
         <slot name="subtitle">
           <!-- `<span>副标题</span>` -->
