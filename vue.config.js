@@ -89,6 +89,16 @@ module.exports = {
       addStyleResource(config.module.rule('scss').oneOf(type));
     });
 
+    // eslint auto fix on run script serve
+    config.module
+      .rule('eslint')
+      .use('eslint-loader')
+      .loader('eslint-loader')
+      .tap(options => {
+        options.fix = true
+        return options
+      });
+
     // 批量处理 svg
     config.module
       .rule('svg')
