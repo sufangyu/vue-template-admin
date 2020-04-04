@@ -57,7 +57,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "husky": "^2.3.0",
     "lint-staged": "^8.1.5",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "sass": "^1.18.0",
     "sass-loader": "^8.0.0",
     "script-loader": "^0.7.2",
